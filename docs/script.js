@@ -93,6 +93,25 @@
     });
   }
 
+  const stage = document.querySelector(".portrait");
+  const ring = document.querySelector(".portrait-ring");
+  const canTilt = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (stage && ring && canTilt && !reduceMotion) {
+    stage.addEventListener("pointermove", function (event) {
+      const bounds = stage.getBoundingClientRect();
+      const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+      const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+      ring.style.animation = "none";
+      ring.style.transform =
+        "rotateY(" + (x * 36).toFixed(2) + "deg) rotateX(" + (-y * 22).toFixed(2) + "deg)";
+    });
+    stage.addEventListener("pointerleave", function () {
+      ring.style.animation = "";
+      ring.style.transform = "";
+    });
+  }
+
   document.querySelectorAll(".portrait img").forEach(function (img) {
     img.addEventListener("error", function () {
       const figure = img.closest(".portrait");
