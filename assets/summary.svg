@@ -2,52 +2,52 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="920" height="300" viewBox="0 0 920 300" role="img" aria-labelledby="title desc">
   <title id="title">Ringkasan GitHub Andra Aulia Rizaldy</title>
   <desc id="desc">18 repositori publik, 16 pengikut, bergabung tahun 2020. Bahasa yang terdeteksi: Java, PHP, JavaScript, HTML, CSS, dan Blade.</desc>
-  <rect width="920" height="300" fill="#0b0a08"/>
-  <rect x="16" y="16" width="888" height="268" fill="none" stroke="#d4b483" stroke-opacity="0.55"/>
-  <rect x="22" y="22" width="876" height="256" fill="none" stroke="#d4b483" stroke-opacity="0.22"/>
+  <rect width="920" height="300" fill="#f4efe8"/>
+  <rect x="16" y="16" width="888" height="268" fill="none" stroke="#8f7560" stroke-opacity="0.55"/>
+  <rect x="22" y="22" width="876" height="256" fill="none" stroke="#8f7560" stroke-opacity="0.22"/>
 
-  <text x="56" y="68" fill="#d4b483" font-family="Georgia, Palatino, serif" font-size="13" letter-spacing="4">RINGKASAN</text>
+  <text x="56" y="68" fill="#8f7560" font-family="Georgia, Palatino, serif" font-size="13" letter-spacing="4">RINGKASAN</text>
 
-  <text x="56" y="124" fill="#f4efe6" font-family="Georgia, Palatino, serif" font-size="42">18</text>
-  <text x="56" y="148" fill="#cfc6b8" font-family="Georgia, Palatino, serif" font-size="13" letter-spacing="1.5">REPOSITORI</text>
+  <text x="56" y="124" fill="#3e3832" font-family="Georgia, Palatino, serif" font-size="42">18</text>
+  <text x="56" y="148" fill="#6f675f" font-family="Georgia, Palatino, serif" font-size="13" letter-spacing="1.5">REPOSITORI</text>
 
-  <text x="210" y="124" fill="#f4efe6" font-family="Georgia, Palatino, serif" font-size="42">16</text>
-  <text x="210" y="148" fill="#cfc6b8" font-family="Georgia, Palatino, serif" font-size="13" letter-spacing="1.5">PENGIKUT</text>
+  <text x="210" y="124" fill="#3e3832" font-family="Georgia, Palatino, serif" font-size="42">16</text>
+  <text x="210" y="148" fill="#6f675f" font-family="Georgia, Palatino, serif" font-size="13" letter-spacing="1.5">PENGIKUT</text>
 
-  <text x="360" y="124" fill="#f4efe6" font-family="Georgia, Palatino, serif" font-size="42">2020</text>
-  <text x="360" y="148" fill="#cfc6b8" font-family="Georgia, Palatino, serif" font-size="13" letter-spacing="1.5">SEJAK</text>
+  <text x="360" y="124" fill="#3e3832" font-family="Georgia, Palatino, serif" font-size="42">2020</text>
+  <text x="360" y="148" fill="#6f675f" font-family="Georgia, Palatino, serif" font-size="13" letter-spacing="1.5">SEJAK</text>
 
-  <text x="520" y="64" fill="#d4b483" font-family="Georgia, Palatino, serif" font-size="13" letter-spacing="3">BAHASA</text>
+  <text x="520" y="64" fill="#8f7560" font-family="Georgia, Palatino, serif" font-size="13" letter-spacing="3">BAHASA</text>
 
-  <text x="520" y="98" fill="#e6dfd2" font-family="Georgia, Palatino, serif" font-size="14">Java</text>
-  <rect x="630" y="86" width="180" height="8" rx="4" fill="#2a241c"/>
-  <rect x="630" y="86" width="180" height="8" rx="4" fill="#d4b483"/>
-  <text x="822" y="95" fill="#cfc6b8" font-family="Georgia, Palatino, serif" font-size="13">3</text>
+  <text x="520" y="98" fill="#5a524b" font-family="Georgia, Palatino, serif" font-size="14">Java</text>
+  <rect x="630" y="86" width="180" height="8" rx="4" fill="#e7ddd2"/>
+  <rect x="630" y="86" width="180" height="8" rx="4" fill="#8f7560"/>
+  <text x="822" y="95" fill="#6f675f" font-family="Georgia, Palatino, serif" font-size="13">3</text>
 
-  <text x="520" y="128" fill="#e6dfd2" font-family="Georgia, Palatino, serif" font-size="14">PHP</text>
-  <rect x="630" y="116" width="180" height="8" rx="4" fill="#2a241c"/>
-  <rect x="630" y="116" width="120" height="8" rx="4" fill="#d4b483"/>
-  <text x="822" y="125" fill="#cfc6b8" font-family="Georgia, Palatino, serif" font-size="13">2</text>
+  <text x="520" y="128" fill="#5a524b" font-family="Georgia, Palatino, serif" font-size="14">PHP</text>
+  <rect x="630" y="116" width="180" height="8" rx="4" fill="#e7ddd2"/>
+  <rect x="630" y="116" width="120" height="8" rx="4" fill="#8f7560"/>
+  <text x="822" y="125" fill="#6f675f" font-family="Georgia, Palatino, serif" font-size="13">2</text>
 
-  <text x="520" y="158" fill="#e6dfd2" font-family="Georgia, Palatino, serif" font-size="14">JavaScript</text>
-  <rect x="630" y="146" width="180" height="8" rx="4" fill="#2a241c"/>
-  <rect x="630" y="146" width="120" height="8" rx="4" fill="#d4b483"/>
-  <text x="822" y="155" fill="#cfc6b8" font-family="Georgia, Palatino, serif" font-size="13">2</text>
+  <text x="520" y="158" fill="#5a524b" font-family="Georgia, Palatino, serif" font-size="14">JavaScript</text>
+  <rect x="630" y="146" width="180" height="8" rx="4" fill="#e7ddd2"/>
+  <rect x="630" y="146" width="120" height="8" rx="4" fill="#8f7560"/>
+  <text x="822" y="155" fill="#6f675f" font-family="Georgia, Palatino, serif" font-size="13">2</text>
 
-  <text x="520" y="188" fill="#e6dfd2" font-family="Georgia, Palatino, serif" font-size="14">HTML</text>
-  <rect x="630" y="176" width="180" height="8" rx="4" fill="#2a241c"/>
-  <rect x="630" y="176" width="120" height="8" rx="4" fill="#d4b483"/>
-  <text x="822" y="185" fill="#cfc6b8" font-family="Georgia, Palatino, serif" font-size="13">2</text>
+  <text x="520" y="188" fill="#5a524b" font-family="Georgia, Palatino, serif" font-size="14">HTML</text>
+  <rect x="630" y="176" width="180" height="8" rx="4" fill="#e7ddd2"/>
+  <rect x="630" y="176" width="120" height="8" rx="4" fill="#8f7560"/>
+  <text x="822" y="185" fill="#6f675f" font-family="Georgia, Palatino, serif" font-size="13">2</text>
 
-  <text x="520" y="218" fill="#e6dfd2" font-family="Georgia, Palatino, serif" font-size="14">CSS</text>
-  <rect x="630" y="206" width="180" height="8" rx="4" fill="#2a241c"/>
-  <rect x="630" y="206" width="60" height="8" rx="4" fill="#d4b483"/>
-  <text x="822" y="215" fill="#cfc6b8" font-family="Georgia, Palatino, serif" font-size="13">1</text>
+  <text x="520" y="218" fill="#5a524b" font-family="Georgia, Palatino, serif" font-size="14">CSS</text>
+  <rect x="630" y="206" width="180" height="8" rx="4" fill="#e7ddd2"/>
+  <rect x="630" y="206" width="60" height="8" rx="4" fill="#8f7560"/>
+  <text x="822" y="215" fill="#6f675f" font-family="Georgia, Palatino, serif" font-size="13">1</text>
 
-  <text x="520" y="248" fill="#e6dfd2" font-family="Georgia, Palatino, serif" font-size="14">Blade</text>
-  <rect x="630" y="236" width="180" height="8" rx="4" fill="#2a241c"/>
-  <rect x="630" y="236" width="60" height="8" rx="4" fill="#d4b483"/>
-  <text x="822" y="245" fill="#cfc6b8" font-family="Georgia, Palatino, serif" font-size="13">1</text>
+  <text x="520" y="248" fill="#5a524b" font-family="Georgia, Palatino, serif" font-size="14">Blade</text>
+  <rect x="630" y="236" width="180" height="8" rx="4" fill="#e7ddd2"/>
+  <rect x="630" y="236" width="60" height="8" rx="4" fill="#8f7560"/>
+  <text x="822" y="245" fill="#6f675f" font-family="Georgia, Palatino, serif" font-size="13">1</text>
 
-  <text x="56" y="250" fill="#9c9486" font-family="Georgia, Palatino, serif" font-size="12">Tujuh repositori lain belum terdeteksi bahasanya.</text>
+  <text x="56" y="250" fill="#8a8178" font-family="Georgia, Palatino, serif" font-size="12">Tujuh repositori lain belum terdeteksi bahasanya.</text>
 </svg>
