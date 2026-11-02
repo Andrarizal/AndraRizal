@@ -3,15 +3,15 @@
 <img src="./assets/banner.png" alt="Andra Aulia Rizaldy, Web Developer dari Cilacap" width="100%" />
 
 <a href="https://andrarizal.github.io/AndraRizal/">
-  <img src="https://readme-typing-svg.demolab.com?font=Playfair+Display&weight=600&size=26&duration=2800&pause=1200&color=8F7560&center=true&vCenter=true&width=680&height=54&lines=Web+Developer;Fullstack+%C2%B7+Laravel+%26+React;Keep+Learning%2C+Keep+Moving" alt="Web Developer. Fullstack, Laravel dan React. Keep Learning, Keep Moving." />
+  <img src="https://readme-typing-svg.demolab.com?font=Playfair+Display&weight=600&size=26&duration=2800&pause=1200&color=4C9DFF&center=true&vCenter=true&width=680&height=54&lines=Web+Developer;Fullstack+%C2%B7+Laravel+%26+React;Keep+Learning%2C+Keep+Moving" alt="Web Developer. Fullstack, Laravel dan React. Keep Learning, Keep Moving." />
 </a>
 
 <br/>
 
-<a href="https://andrarizal.github.io/AndraRizal/"><img src="https://img.shields.io/badge/Portfolio-buka%20situs-a89078?style=for-the-badge&labelColor=8f7560" alt="Buka portfolio" /></a>
-<img src="https://komarev.com/ghpvc/?username=Andrarizal&label=Profile%20Views&color=a89078&style=for-the-badge&labelColor=8f7560" alt="Jumlah kunjungan profil" />
-<img src="https://img.shields.io/github/followers/Andrarizal?style=for-the-badge&logo=github&color=a89078&labelColor=8f7560&logoColor=f4efe8" alt="Pengikut GitHub" />
-<img src="https://img.shields.io/badge/Cilacap-Jawa%20Tengah-a89078?style=for-the-badge&logo=googlemaps&logoColor=f4efe8&labelColor=8f7560" alt="Cilacap, Jawa Tengah" />
+<a href="https://andrarizal.github.io/AndraRizal/"><img src="https://img.shields.io/badge/Portfolio-buka%20situs-4c9dff?style=for-the-badge&labelColor=0e1118" alt="Buka portfolio" /></a>
+<img src="https://komarev.com/ghpvc/?username=Andrarizal&label=Profile%20Views&color=3ee0a0&style=for-the-badge&labelColor=0e1118" alt="Jumlah kunjungan profil" />
+<img src="https://img.shields.io/github/followers/Andrarizal?style=for-the-badge&logo=github&color=4c9dff&labelColor=0e1118&logoColor=eef3fb" alt="Pengikut GitHub" />
+<img src="https://img.shields.io/badge/Cilacap-Jawa%20Tengah-ff5d73?style=for-the-badge&logo=googlemaps&logoColor=eef3fb&labelColor=0e1118" alt="Cilacap, Jawa Tengah" />
 
 </div>
 
@@ -74,7 +74,7 @@ const andra = {
 
 <br/>
 
-<img src="https://streak-stats.demolab.com?user=andrarizal&hide_border=true&background=F4EFE8&stroke=E4D9CC&ring=8F7560&fire=8F7560&currStreakNum=3E3832&sideNums=5A524B&currStreakLabel=8F7560&sideLabels=6F675F&dates=8A8178" alt="Riwayat kontribusi beruntun" />
+<img src="https://streak-stats.demolab.com?user=andrarizal&hide_border=true&background=0E1118&stroke=243044&ring=4C9DFF&fire=FF5D73&currStreakNum=EEF3FB&sideNums=C9D3E4&currStreakLabel=4C9DFF&sideLabels=9AABC2&dates=7E8DA3" alt="Riwayat kontribusi beruntun" />
 
 </div>
 
@@ -96,10 +96,10 @@ const andra = {
 
 <div align="center">
 
-<a href="https://www.linkedin.com/in/andra-aulia-rizaldy-939404232/"><img src="https://img.shields.io/badge/LinkedIn-8f7560?style=for-the-badge&logo=linkedin&logoColor=f4efe8" alt="LinkedIn" /></a>
-<a href="https://www.youtube.com/channel/UCnYAJAK2o31-_l3akpcC6tQ"><img src="https://img.shields.io/badge/YouTube-8f7560?style=for-the-badge&logo=youtube&logoColor=f4efe8" alt="YouTube" /></a>
-<a href="https://instagram.com/andrarizal787"><img src="https://img.shields.io/badge/Instagram-8f7560?style=for-the-badge&logo=instagram&logoColor=f4efe8" alt="Instagram" /></a>
-<a href="https://github.com/Andrarizal"><img src="https://img.shields.io/badge/GitHub-8f7560?style=for-the-badge&logo=github&logoColor=f4efe8" alt="GitHub" /></a>
+<a href="https://www.linkedin.com/in/andra-aulia-rizaldy-939404232/"><img src="https://img.shields.io/badge/LinkedIn-4c9dff?style=for-the-badge&logo=linkedin&logoColor=eef3fb" alt="LinkedIn" /></a>
+<a href="https://www.youtube.com/channel/UCnYAJAK2o31-_l3akpcC6tQ"><img src="https://img.shields.io/badge/YouTube-ff5d73?style=for-the-badge&logo=youtube&logoColor=eef3fb" alt="YouTube" /></a>
+<a href="https://instagram.com/andrarizal787"><img src="https://img.shields.io/badge/Instagram-3ee0a0?style=for-the-badge&logo=instagram&logoColor=0e1118" alt="Instagram" /></a>
+<a href="https://github.com/Andrarizal"><img src="https://img.shields.io/badge/GitHub-0e1118?style=for-the-badge&logo=github&logoColor=4c9dff" alt="GitHub" /></a>
 
 <br/><br/>
 
