@@ -452,7 +452,7 @@ h2 {
 
 .skills {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
@@ -491,7 +491,55 @@ h2 {
   text-decoration: none;
 }
 
-.work-list {
+.work-list,
+.role-list {
+  border-bottom: 1px solid var(--line);
+}
+
+.role {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr) auto;
+  gap: 1rem 1.25rem;
+  align-items: start;
+  margin: 0;
+  padding: 1.45rem 0.4rem;
+  border-top: 1px solid var(--line);
+}
+
+.role-where {
+  display: block;
+  margin-top: 0.45rem;
+  color: var(--faint);
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+}
+
+.role-points {
+  margin: 0.75rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.role-points li + li {
+  margin-top: 0.4rem;
+}
+
+.certs {
+  margin: 1.6rem 0 0 5.5rem;
+  padding: 0;
+  max-width: 42rem;
+  list-style: none;
+}
+
+.certs li {
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--line);
+  color: var(--cream);
+  font-weight: 300;
+}
+
+.certs li:last-child {
   border-bottom: 1px solid var(--line);
 }
 
@@ -654,7 +702,8 @@ h2 {
 
   .prose,
   .section-note,
-  .more {
+  .more,
+  .certs {
     margin-left: 0;
   }
 
@@ -698,6 +747,14 @@ h2 {
 
   .nav-links.is-open {
     display: flex;
+  }
+
+  .role {
+    grid-template-columns: 2.6rem minmax(0, 1fr);
+  }
+
+  .role .work-meta {
+    grid-column: 2;
   }
 
   .nav-links a {
