@@ -70,20 +70,11 @@ const andra = {
 
 <div align="center">
 
-<img height="180" src="https://github-readme-stats.vercel.app/api?username=andrarizal&show_icons=true&hide_border=true&bg_color=0b0a08&title_color=d4b483&text_color=e6dfd2&icon_color=d4b483" alt="Statistik GitHub Andra" />
-<img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=andrarizal&layout=compact&hide_border=true&bg_color=0b0a08&title_color=d4b483&text_color=e6dfd2" alt="Bahasa yang paling sering dipakai" />
+<img src="./assets/summary.png" alt="18 repositori publik, 16 pengikut, sejak 2020. Bahasa terdeteksi: Java 3, PHP 2, JavaScript 2, HTML 2, CSS 1, Blade 1." width="92%" />
 
 <br/>
 
 <img src="https://streak-stats.demolab.com?user=andrarizal&hide_border=true&background=0B0A08&stroke=3A3428&ring=D4B483&fire=D4B483&currStreakNum=F4EFE6&sideNums=E6DFD2&currStreakLabel=D4B483&sideLabels=C9C0B2&dates=9C9486" alt="Riwayat kontribusi beruntun" />
-
-<br/>
-
-<img src="https://github-profile-trophy.vercel.app/?username=andrarizal&theme=gruvbox&no-frame=true&row=1&column=7" alt="Trofi profil GitHub" />
-
-<br/>
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=andrarizal&bg_color=0b0a08&color=e6dfd2&line=d4b483&point=f4efe6&area=true&hide_border=true&custom_title=Grafik%20Kontribusi" alt="Grafik kontribusi" width="95%" />
 
 </div>
 
