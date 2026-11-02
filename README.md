@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/banner.svg" alt="Andra Aulia Rizaldy, Web Developer dari Cilacap" width="100%" />
+<img src="./assets/banner.png" alt="Andra Aulia Rizaldy, Web Developer dari Cilacap" width="100%" />
 
 <a href="https://andrarizal.github.io/AndraRizal/">
   <img src="https://readme-typing-svg.demolab.com?font=Playfair+Display&weight=600&size=26&duration=2800&pause=1200&color=D4B483&center=true&vCenter=true&width=680&height=54&lines=Web+Developer;Fullstack+%C2%B7+Laravel+%26+React;Keep+Learning%2C+Keep+Moving" alt="Web Developer. Fullstack, Laravel dan React. Keep Learning, Keep Moving." />
