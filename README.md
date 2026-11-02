@@ -34,7 +34,7 @@ const andra = {
   from: "Yogyakarta, Indonesia",
   stack: ["Node.js", "NestJS", "Laravel", "Golang", "Next.js", "PostgreSQL"],
   focus: ["SIMRS", "REST API", "DevOps"],
-  education: "Informatika, IT Telkom Purwokerto · IPK 3.91, cum laude",
+  education: "Software Engineering, Institut Teknologi Telkom Purwokerto · IPK 3.91, cum laude",
   motto: "Keep Learning, Keep Moving",
   portfolio: "https://andrarizal.github.io/AndraRizal/",
 };
@@ -43,7 +43,7 @@ const andra = {
 - Lebih dari lima tahun membangun perangkat lunak, termasuk lebih dari tiga tahun memimpin SIMRS rumah sakit
 - Backend **Node.js** (Express, NestJS), **Laravel**, dan **Golang**; frontend **Next.js**, **React**, dan **Vue**
 - Integrasi Kementerian Kesehatan, Satu Sehat, dan bridging BPJS
-- S1 Teknik Informatika, Institut Teknologi Telkom Purwokerto, IPK 3.91, cum laude
+- S1 Software Engineering, Institut Teknologi Telkom Purwokerto, IPK 3.91, cum laude
 - Situs: [andrarizal.github.io/AndraRizal](https://andrarizal.github.io/AndraRizal/)
 
 <img src="./assets/rule.svg" alt="" width="100%" />
