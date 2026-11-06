@@ -31,9 +31,12 @@ body {
   min-height: 100vh;
   color: var(--ivory);
   font-family: var(--sans);
-  font-size: 1.05rem;
-  font-weight: 400;
-  line-height: 1.65;
+  font-size: 1.02rem;
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
   background:
     radial-gradient(ellipse 42% 36% at 0% 0%, rgba(255, 93, 115, 0.22), transparent 58%),
     radial-gradient(ellipse 38% 32% at 100% 8%, rgba(76, 157, 255, 0.24), transparent 55%),
@@ -202,8 +205,9 @@ a {
 .kicker {
   margin: 0 0 1rem;
   color: var(--gold);
-  font-size: 0.75rem;
-  letter-spacing: 0.32em;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
@@ -414,11 +418,20 @@ h2 {
 }
 
 .prose {
-  max-width: 42rem;
-  margin: 0 0 2.2rem 5.5rem;
+  max-width: 38rem;
+  margin: 0 0 2.4rem 5.5rem;
   color: var(--cream);
   font-weight: 300;
-  font-size: 1.12rem;
+  font-size: 1.16rem;
+  line-height: 1.75;
+}
+
+.prose p {
+  margin: 0;
+}
+
+.prose p + p {
+  margin-top: 1.05rem;
 }
 
 .facts {
@@ -437,9 +450,11 @@ h2 {
 
 .facts h3,
 .skill h3 {
-  margin: 0.35rem 0 0.7rem;
-  font-size: 1.8rem;
+  margin: 0.2rem 0 0.85rem;
+  font-size: 1.85rem;
   font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: 0.01em;
 }
 
 .facts p,
@@ -448,6 +463,19 @@ h2 {
   margin: 0;
   color: var(--muted);
   font-size: 0.98rem;
+  font-weight: 300;
+  line-height: 1.55;
+}
+
+.facts .aside,
+.certs .aside {
+  color: var(--faint);
+}
+
+.facts .aside {
+  margin-top: 0.45rem;
+  font-size: 0.86rem;
+  letter-spacing: 0.04em;
 }
 
 .skills {
@@ -525,18 +553,34 @@ h2 {
   margin-top: 0.4rem;
 }
 
+.certs-label {
+  margin: 2.4rem 0 0.35rem 5.5rem;
+}
+
 .certs {
-  margin: 1.6rem 0 0 5.5rem;
+  margin: 0 0 0 5.5rem;
   padding: 0;
-  max-width: 42rem;
+  max-width: 40rem;
   list-style: none;
 }
 
 .certs li {
-  padding: 0.75rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 0.85rem 0;
   border-top: 1px solid var(--line);
   color: var(--cream);
   font-weight: 300;
+}
+
+.certs .aside {
+  flex: none;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .certs li:last-child {
@@ -707,8 +751,15 @@ h2 {
   .prose,
   .section-note,
   .more,
-  .certs {
+  .certs,
+  .certs-label {
     margin-left: 0;
+  }
+
+  .certs li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
   }
 
   .hero-foot {
