@@ -306,7 +306,7 @@ const body = k.plateHtml({
   body: `<div class="iso-stage" tabindex="0" role="slider" aria-label="Rel rekam medis. Tombol panah memindahkan berkas dari stasiun ke stasiun." aria-valuemin="1" aria-valuemax="7" aria-valuenow="1">${svg}</div>`,
 });
 
-const pageBody = `${body}<p style="margin:1.6rem 0 0;font-size:0.85rem"><a href="index.html" style="color:inherit">Kembali ke profil</a></p>`;
+const pageBody = `${body}<p class="back-link" style="margin:1.6rem 0 0;font-size:0.85rem"><a href="index.html" style="color:inherit">Kembali ke profil</a></p><style>html.framed,html.framed body{overflow:hidden;background:#e6e6e6}html.framed .iso-page{margin:0;padding:0}html.framed .iso-figure{margin:0}html.framed .iso-legend,html.framed .back-link{display:none}</style><script>if(window.top!==window)document.documentElement.classList.add("framed")</script>`;
 const html = k.pageHtml({ title: "Rekam medis berjalan", theme, body: pageBody, script: kitScript() + live, width: 860 });
 const file = theme === "light" ? "rekam-medis-light.html" : "rekam-medis.html";
 writeFileSync(join(HERE, file), html);
