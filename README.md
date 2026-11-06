@@ -45,6 +45,7 @@ const andra = {
 - Integrasi Kementerian Kesehatan, Satu Sehat, dan bridging BPJS
 - S1 Software Engineering, Institut Teknologi Telkom Purwokerto, IPK 3.91, cum laude
 - Situs: [andrarizal.github.io/AndraRizal](https://andrarizal.github.io/AndraRizal/)
+- Gambar: [Rekam medis berjalan](https://andrarizal.github.io/AndraRizal/rekam-medis.html)
 
 <img src="./assets/rule.svg" alt="" width="100%" />
 
