@@ -101,7 +101,11 @@ const andra = {
 ## Kontribusi
 
 <div align="center">
-<img src="./assets/contrib.png" alt="Kotak kontribusi setahun terakhir. Termasuk repositori privat. Nama repositori tidak ditampilkan." width="92%" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Andrarizal/AndraRizal/main/assets/snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Andrarizal/AndraRizal/main/assets/snake.svg" />
+  <img alt="Ular berjalan di kotak kontribusi setahun terakhir. Termasuk repositori privat. Nama repositori tidak ditampilkan." src="https://raw.githubusercontent.com/Andrarizal/AndraRizal/main/assets/snake-dark.svg" />
+</picture>
 </div>
 
 <img src="./assets/rule.svg" alt="" width="100%" />

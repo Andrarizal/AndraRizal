@@ -160,55 +160,116 @@ def draw_streak(total, first, current, current_end, longest, long_start, long_en
     image.save(ROOT / "assets" / "streak.png", "PNG")
 
 
-def draw_grid(cells, today):
-    weeks = []
+def contribution_weeks(cells, today):
     sunday = today - timedelta(days=(today.weekday() + 1) % 7)
     start = sunday - timedelta(weeks=52)
-    day = start
-    while day <= today:
-        if not weeks or len(weeks[-1]) == 7:
-            weeks.append([])
-        weeks[-1].append(day)
-        day += timedelta(days=1)
+    weeks = []
+    for index in range(53):
+        week = []
+        for row in range(7):
+            day = start + timedelta(days=index * 7 + row)
+            week.append(0 if day > today else cells.get(day, (0, 0))[1])
+        weeks.append(week)
+    return weeks
 
-    step = 18
-    cell = 14
-    left = 86
-    top = 64
-    width = left + len(weeks) * step + 48
-    height = top + 7 * step + 78
-    image = Image.new("RGB", (width, height), BG)
-    draw = ImageDraw.Draw(image)
-    draw.rounded_rectangle((8, 8, width - 9, height - 9), radius=22, outline=LINE, width=2)
 
-    small = font(16)
-    tiny = font(15)
-    for index, name in ((1, "Sen"), (3, "Rab"), (5, "Jum")):
-        draw.text((28, top + index * step - 1), name, font=tiny, fill=DATE)
+def snake_route(weeks):
+    points = []
+    for column, _week in enumerate(weeks):
+        rows = range(7) if column % 2 == 0 else range(6, -1, -1)
+        points.extend((column, row) for row in rows)
+    warmup = [(3, -1), (2, -1), (1, -1), (0, -1)]
+    last_column, _last_row = points[-1]
+    leaving = [(last_column + 1 + step, -1) for step in range(5)]
+    return warmup + points + leaving
 
-    labeled = set()
+
+def snake_svg(weeks, palette):
+    route = snake_route(weeks)
+    segments = 4
+    hold = 48
+    frames = list(range(segments - 1, len(route))) + [len(route) - 1] * hold
+    last = len(frames) - 1
+    empty = palette[0]
+
+    def at(frame, segment):
+        index = frame - segment
+        return route[index] if index >= 0 else route[0]
+
+    def percent(frame_index):
+        return frame_index / last * 100
+
+    grid_done = percent((len(route) - 5 - 1) - (segments - 1))
+    rules = [
+        ":root{"
+        f"--ce:{empty};--c1:{palette[1]};--c2:{palette[2]};--c3:{palette[3]};--c4:{palette[4]};"
+        "--cs:#c084fc;--bar:#3ee0a0;--bd:#1b1f230a}"
+        ".c{shape-rendering:geometricPrecision;fill:var(--ce);stroke:var(--bd);stroke-width:1px;"
+        "width:11px;height:11px;animation:none 24000ms linear infinite}"
+        ".s{shape-rendering:geometricPrecision;fill:var(--cs);animation:none linear 24000ms infinite}"
+        ".u{fill:var(--bar);transform-origin:0 0;transform:scaleX(0);animation:grow linear 24000ms infinite}"
+        f"@keyframes grow{{0%{{transform:scaleX(0)}}{grid_done:.2f}%,100%{{transform:scaleX(1)}}}}"
+    ]
+    eaten = []
+    rects = []
+    eaten_index = 0
     for column, week in enumerate(weeks):
-        x = left + column * step
-        for day in week:
-            if day.day == 1 and day.month not in labeled:
-                labeled.add(day.month)
-                draw.text((x, 32), MONTHS[day.month - 1], font=small, fill=DATE)
-            _, level = cells.get(day, (0, 0))
-            y = top + ((day.weekday() + 1) % 7) * step
-            draw.rounded_rectangle((x, y, x + cell, y + cell), radius=3, fill=GREEN[min(level, 4)])
+        for row, level in enumerate(week):
+            klass = "c"
+            if level:
+                color = f"var(--c{min(level, 4)})"
+                step = next(i for i, (x, y) in enumerate(route) if (x, y) == (column, row))
+                frame_index = step - (segments - 1)
+                mark = percent(frame_index)
+                name = f"e{eaten_index}"
+                eaten_index += 1
+                rules.append(
+                    f"@keyframes {name}{{{mark:.2f}%{{fill:{color}}}{mark + 0.08:.2f}%,100%{{fill:var(--ce)}}}}"
+                )
+                rules.append(f".c.{name}{{fill:{color};animation-name:{name}}}")
+                klass = f"c {name}"
+                eaten.append((column, row))
+            rects.append(
+                f'<rect class="{klass}" x="{column * 16 + 2}" y="{row * 16 + 2}" rx="2" ry="2"/>'
+            )
 
-    legend = "Lebih sedikit"
-    box = draw.textbbox((0, 0), legend, font=tiny)
-    lx = width - 48 - (box[2] - box[0]) - 5 * 20 - 90
-    ly = top + 7 * step + 16
-    draw.text((lx, ly), legend, font=tiny, fill=DATE)
-    for i, color in enumerate(GREEN):
-        x = lx + (box[2] - box[0]) + 12 + i * 20
-        draw.rounded_rectangle((x, ly + 2, x + cell, ly + 2 + cell), radius=3, fill=color)
-    draw.text((lx + (box[2] - box[0]) + 12 + 5 * 20, ly), "Lebih banyak", font=tiny, fill=DATE)
-    note = "Termasuk kontribusi repositori privat. Nama repositori tidak ditampilkan."
-    draw.text((left, ly + 28), note, font=tiny, fill=MUTED)
-    image.save(ROOT / "assets" / "contrib.png", "PNG")
+    for segment in range(segments):
+        keys = []
+        previous = None
+        for frame_index, frame in enumerate(frames):
+            column, row = at(frame, segment)
+            if (column, row) == previous and frame_index not in (0, last):
+                continue
+            previous = (column, row)
+            keys.append(f"{percent(frame_index):.2f}%{{transform:translate({column * 16}px,{row * 16}px)}}")
+        rules.append(f"@keyframes s{segment}{{{''.join(keys)}}}")
+        column, row = at(frames[0], segment)
+        size = 13.2 - segment * 1.5
+        inset = (16 - size) / 2
+        rules.append(
+            f".s.s{segment}{{animation-name:s{segment};transform:translate({column * 16}px,{row * 16}px)}}"
+        )
+        rects.append(
+            f'<rect class="s s{segment}" x="{inset:.1f}" y="{inset:.1f}" width="{size:.1f}" height="{size:.1f}" rx="4" ry="4"/>'
+        )
+
+    width = len(weeks) * 16
+    rects.append(f'<rect class="u" x="2" y="128" width="{width - 6}" height="10" rx="5"/>')
+    style = "".join(rules)
+    return (
+        f'<svg viewBox="-8 -24 {width + 20} 176" width="{width + 20}" height="176" xmlns="http://www.w3.org/2000/svg">'
+        f"<style>{style}</style>{''.join(rects)}</svg>"
+    )
+
+
+def draw_snake(cells, today):
+    weeks = contribution_weeks(cells, today)
+    dark = ("#161b22", "#01311f", "#034525", "#0f6d31", "#00c647")
+    light = ("#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39")
+    (ROOT / "assets" / "snake-dark.svg").write_text(snake_svg(weeks, dark), encoding="utf-8")
+    (ROOT / "assets" / "snake.svg").write_text(snake_svg(weeks, light), encoding="utf-8")
+    filled = sum(level > 0 for week in weeks for level in week)
+    print(f"ular {len(weeks)} minggu, {filled} kotak terisi")
 
 
 def main():
@@ -220,7 +281,7 @@ def main():
     current, _, current_end = current_streak(cells, today)
     longest, long_start, long_end = longest_streak(cells, today)
     draw_streak(total, first, current, current_end, longest, long_start, long_end)
-    draw_grid(cells, today)
+    draw_snake(cells, today)
     print(f"total {total}")
     print(f"pertama {first.isoformat()}")
     print(f"beruntun {current} {None if not current_end else current_end.isoformat()}")

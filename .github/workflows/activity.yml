@@ -29,7 +29,7 @@ jobs:
 
       - name: Publish the images
         run: |
-          git add assets/streak.png assets/contrib.png
+          git add assets/streak.png assets/snake.svg assets/snake-dark.svg
           git diff --cached --quiet && exit 0
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "Refresh contribution counts, including private activity."
           git push
