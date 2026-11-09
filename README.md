@@ -92,7 +92,7 @@ const andra = {
 
 <br/>
 
-<img src="https://streak-stats.demolab.com?user=andrarizal&hide_border=true&background=0E1118&stroke=243044&ring=4C9DFF&fire=FF5D73&currStreakNum=EEF3FB&sideNums=C9D3E4&currStreakLabel=4C9DFF&sideLabels=9AABC2&dates=7E8DA3" alt="Riwayat kontribusi beruntun" />
+<img src="./assets/streak.png" alt="Total kontribusi, beruntun saat ini, dan rekor terpanjang. Angkanya mencakup repositori privat, tanpa nama repositori." width="92%" />
 
 </div>
 
@@ -101,11 +101,7 @@ const andra = {
 ## Kontribusi
 
 <div align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Andrarizal/AndraRizal/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Andrarizal/AndraRizal/output/github-snake.svg" />
-  <img alt="Animasi ular dari kotak kontribusi GitHub" src="https://raw.githubusercontent.com/Andrarizal/AndraRizal/output/github-snake-dark.svg" />
-</picture>
+<img src="./assets/contrib.png" alt="Kotak kontribusi setahun terakhir. Termasuk repositori privat. Nama repositori tidak ditampilkan." width="92%" />
 </div>
 
 <img src="./assets/rule.svg" alt="" width="100%" />
