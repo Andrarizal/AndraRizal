@@ -102,9 +102,9 @@ const andra = {
 
 <div align="center">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Andrarizal/AndraRizal/main/assets/snake-dark.svg?v=3" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Andrarizal/AndraRizal/main/assets/snake.svg?v=3" />
-  <img alt="Ular berjalan di kotak kontribusi setahun terakhir. Termasuk repositori privat. Nama repositori tidak ditampilkan." src="https://raw.githubusercontent.com/Andrarizal/AndraRizal/main/assets/snake-dark.svg?v=3" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Andrarizal/AndraRizal/main/assets/snake-dark.svg?v=4" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Andrarizal/AndraRizal/main/assets/snake.svg?v=4" />
+  <img alt="Ular berjalan di kotak kontribusi setahun terakhir. Termasuk repositori privat. Nama repositori tidak ditampilkan." src="https://raw.githubusercontent.com/Andrarizal/AndraRizal/main/assets/snake-dark.svg?v=4" />
 </picture>
 </div>
 

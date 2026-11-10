@@ -344,7 +344,7 @@ def snake_svg(weeks, palette):
         f"--ce:{empty};--c1:{palette[1]};--c2:{palette[2]};--c3:{palette[3]};--c4:{palette[4]};"
         "--bar:#3ee0a0;--bd:#1b1f230a}"
         ".c{shape-rendering:geometricPrecision;fill:var(--ce);stroke:var(--bd);stroke-width:1px;"
-        f"width:11px;height:11px;animation:none {duration}ms linear infinite}}"
+        "width:11px;height:11px}"
         ".s{shape-rendering:geometricPrecision;opacity:1;"
         f"animation-name:trail,show;animation-duration:{duration}ms,{duration}ms;"
         "animation-timing-function:linear,linear;animation-iteration-count:infinite,infinite}"
@@ -382,31 +382,29 @@ def snake_svg(weeks, palette):
         for row, level in enumerate(week):
             klass = "c"
             if level:
-                color = f"var(--c{min(level, 4)})"
+                color = palette[min(level, 4)]
                 visits = [step for step, cell in enumerate(route[:-1]) if cell[0] == column and cell[1] == row]
+                bounds = [0, *hides, period]
                 frames = [f"0%{{fill:{color}}}"]
                 previous = 0.0
-                cursor = 0
-                for visit in visits:
-                    while cursor < len(hides) and hides[cursor] < visit:
-                        mark = percent(hides[cursor])
-                        if mark > previous:
-                            frames.append(f"{mark:.2f}%{{fill:{color}}}")
-                            previous = mark
-                        cursor += 1
-                    mark = percent(visit)
+                for opened, closed in zip(bounds, bounds[1:]):
+                    eaten_at = [step for step in visits if opened <= step < closed]
+                    if not eaten_at:
+                        continue
+                    mark = percent(eaten_at[0])
                     if mark > previous:
-                        frames.append(f"{mark:.2f}%{{fill:{color}}}")
+                        frames.append(f"{mark:.2f}%{{fill:{empty}}}")
                         previous = mark
-                    off_mark = min(99.9, mark + 0.05)
-                    if off_mark > previous:
-                        frames.append(f"{off_mark:.2f}%{{fill:var(--ce)}}")
-                        previous = off_mark
-                frames.append("100%{fill:var(--ce)}")
+                    if closed < period:
+                        back = percent(closed)
+                        if back > previous + 0.08:
+                            frames.append(f"{back:.2f}%{{fill:{color}}}")
+                            previous = back
+                frames.append(f"100%{{fill:{empty}}}")
                 name = f"e{eaten_index}"
                 eaten_index += 1
                 rules.append(f"@keyframes {name}{{{''.join(frames)}}}")
-                rules.append(f".c.{name}{{fill:{color};animation-name:{name}}}")
+                rules.append(f".c.{name}{{fill:{color};animation:{name} {duration}ms linear infinite}}")
                 klass = f"c {name}"
             rects.append(f'<rect class="{klass}" x="{column * 16 + 2}" y="{row * 16 + 2}" rx="2" ry="2"/>')
 
