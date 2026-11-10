@@ -173,44 +173,209 @@ def contribution_weeks(cells, today):
     return weeks
 
 
-def snake_route(weeks):
+def route_columns(width, height, reverse=False):
+    columns = range(width - 1, -1, -1) if reverse else range(width)
     points = []
-    for column, _week in enumerate(weeks):
-        rows = range(7) if column % 2 == 0 else range(6, -1, -1)
+    for index, column in enumerate(columns):
+        rows = range(height) if index % 2 == 0 else range(height - 1, -1, -1)
         points.extend((column, row) for row in rows)
-    warmup = [(3, -1), (2, -1), (1, -1), (0, -1)]
-    last_column, _last_row = points[-1]
-    leaving = [(last_column + 1 + step, -1) for step in range(5)]
-    return warmup + points + leaving
+    return points
+
+
+def route_rows(width, height):
+    points = []
+    for index, row in enumerate(range(height)):
+        columns = range(width - 1, -1, -1) if index % 2 else range(width)
+        points.extend((column, row) for column in columns)
+    return points
+
+
+def route_diagonal(width, height):
+    points = []
+    for shift in range(width + height - 1):
+        line = []
+        for row in range(height):
+            column = shift - row
+            if 0 <= column < width:
+                line.append((column, row))
+        if shift % 2:
+            line.reverse()
+        points.extend(line)
+    return points
+
+
+def route_hunt(weeks):
+    targets = [(column, row) for column, week in enumerate(weeks) for row, level in enumerate(week) if level]
+    if len(targets) < 2:
+        return route_columns(len(weeks), 7)
+    current = min(targets)
+    remaining = set(targets)
+    remaining.remove(current)
+    points = [current]
+    while remaining:
+        nxt = min(remaining, key=lambda cell: abs(cell[0] - current[0]) + abs(cell[1] - current[1]))
+        points.extend(orthogonal_steps(current, nxt))
+        current = nxt
+        remaining.remove(nxt)
+    return points
+
+
+def orthogonal_steps(origin, dest):
+    x, y = origin
+    tx, ty = dest
+    steps = []
+    while x != tx:
+        x += 1 if tx > x else -1
+        steps.append((x, y))
+    while y != ty:
+        y += 1 if ty > y else -1
+        steps.append((x, y))
+    return steps
+
+
+def orthogonalize(points):
+    if not points:
+        return []
+    path = [points[0]]
+    for dest in points[1:]:
+        path.extend(orthogonal_steps(path[-1], dest))
+    return path
+
+
+def snake_patterns(weeks):
+    width = len(weeks)
+    height = 7
+    colors = ("#c084fc", "#4c9dff", "#ff5d73", "#3ee0a0")
+    paths = (
+        route_columns(width, height),
+        route_rows(width, height),
+        route_diagonal(width, height),
+        route_hunt(weeks),
+    )
+    return [(orthogonalize(path), color) for path, color in zip(paths, colors)]
+
+
+def head_path(patterns, lineup=22):
+    sky = -6
+    start = patterns[0][0][0]
+    color0 = patterns[0][1]
+    head = (start[0], sky)
+    path = [(head[0], head[1], color0)]
+
+    def push(points, color):
+        for x, y in points:
+            if (x, y) != path[-1][:2]:
+                path.append((x, y, color))
+
+    for points, color in patterns:
+        push(transit(path[-1][:2], points[0], sky), color)
+        push(points, color)
+    tail_tip = (head[0] - (lineup - 1), sky)
+    push(transit(path[-1][:2], tail_tip, sky), color0)
+    push(orthogonal_steps(path[-1][:2], head), color0)
+    return path
+
+
+def transit(origin, dest, sky):
+    x, y = origin
+    steps = []
+    while y > sky:
+        y -= 1
+        steps.append((x, y))
+    while x != dest[0]:
+        x += 1 if dest[0] > x else -1
+        steps.append((x, y))
+    while y < dest[1]:
+        y += 1
+        steps.append((x, y))
+    while y > dest[1]:
+        y -= 1
+        steps.append((x, y))
+    return steps
 
 
 def snake_svg(weeks, palette):
-    route = snake_route(weeks)
-    segments = 4
-    hold = 48
-    frames = list(range(segments - 1, len(route))) + [len(route) - 1] * hold
-    last = len(frames) - 1
+    base = 3
+    longest = 22
+    patterns = snake_patterns(weeks)
+    route = head_path(patterns, longest)
+    period = len(route) - 1
+    height = 7
+    width = len(weeks)
     empty = palette[0]
-
-    def at(frame, segment):
-        index = frame - segment
-        return route[index] if index >= 0 else route[0]
+    duration = max(42000, period * 32)
+    step = duration / period
 
     def percent(frame_index):
-        return frame_index / last * 100
+        return frame_index / period * 100
 
-    grid_done = percent((len(route) - 5 - 1) - (segments - 1))
+    eats = []
+    seen = set()
+    bag = []
+    for index, (column, row, _color) in enumerate(route[:-1]):
+        on_board = 0 <= row < height and 0 <= column < width
+        if not on_board:
+            if bag:
+                eats.append(bag)
+                bag = []
+            seen = set()
+            continue
+        if weeks[column][row] and (column, row) not in seen:
+            seen.add((column, row))
+            bag.append(index)
+    if bag:
+        eats.append(bag)
+
+    hides = []
+    off = False
+    for index, (_column, row, _color) in enumerate(route):
+        if row < 0:
+            if not off:
+                start = index
+                off = True
+            finish = index
+        elif off:
+            if finish - start > longest:
+                hides.append((start + finish) // 2)
+            off = False
+
     rules = [
         ":root{"
         f"--ce:{empty};--c1:{palette[1]};--c2:{palette[2]};--c3:{palette[3]};--c4:{palette[4]};"
-        "--cs:#c084fc;--bar:#3ee0a0;--bd:#1b1f230a}"
+        "--bar:#3ee0a0;--bd:#1b1f230a}"
         ".c{shape-rendering:geometricPrecision;fill:var(--ce);stroke:var(--bd);stroke-width:1px;"
-        "width:11px;height:11px;animation:none 24000ms linear infinite}"
-        ".s{shape-rendering:geometricPrecision;fill:var(--cs);animation:none linear 24000ms infinite}"
-        ".u{fill:var(--bar);transform-origin:0 0;transform:scaleX(0);animation:grow linear 24000ms infinite}"
-        f"@keyframes grow{{0%{{transform:scaleX(0)}}{grid_done:.2f}%,100%{{transform:scaleX(1)}}}}"
+        f"width:11px;height:11px;animation:none {duration}ms linear infinite}}"
+        ".s{shape-rendering:geometricPrecision;opacity:1;"
+        f"animation-name:trail,show;animation-duration:{duration}ms,{duration}ms;"
+        "animation-timing-function:linear,linear;animation-iteration-count:infinite,infinite}"
+        f".u{{fill:var(--bar);transform-origin:0 0;transform:scaleX(0);animation:grow linear {duration}ms infinite}}"
+        "@keyframes show{0%,100%{opacity:1}}"
     ]
-    eaten = []
+    keys = []
+    previous = None
+    for index, (column, row, color) in enumerate(route):
+        spot = (column, row, color)
+        if spot == previous and index not in (0, period):
+            continue
+        previous = spot
+        keys.append(f"{percent(index):.3f}%{{transform:translate({column * 16}px,{row * 16}px);fill:{color}}}")
+    rules.append(f"@keyframes trail{{{''.join(keys)}}}")
+
+    bar = [f"0%{{transform:scaleX(0)}}"]
+    drawing = False
+    for index, (column, row, _color) in enumerate(route[:-1]):
+        on_board = 0 <= row < height and 0 <= column < width
+        if on_board and not drawing:
+            bar.append(f"{percent(index):.2f}%{{transform:scaleX(0)}}")
+            drawing = True
+        elif on_board:
+            last = index
+        elif drawing:
+            bar.append(f"{percent(last):.2f}%{{transform:scaleX(1)}}")
+            drawing = False
+    bar.append("100%{transform:scaleX(0)}")
+    rules.append(f"@keyframes grow{{{''.join(bar)}}}")
+
     rects = []
     eaten_index = 0
     for column, week in enumerate(weeks):
@@ -218,47 +383,76 @@ def snake_svg(weeks, palette):
             klass = "c"
             if level:
                 color = f"var(--c{min(level, 4)})"
-                step = next(i for i, (x, y) in enumerate(route) if (x, y) == (column, row))
-                frame_index = step - (segments - 1)
-                mark = percent(frame_index)
+                visits = [step for step, cell in enumerate(route[:-1]) if cell[0] == column and cell[1] == row]
+                frames = [f"0%{{fill:{color}}}"]
+                previous = 0.0
+                cursor = 0
+                for visit in visits:
+                    while cursor < len(hides) and hides[cursor] < visit:
+                        mark = percent(hides[cursor])
+                        if mark > previous:
+                            frames.append(f"{mark:.2f}%{{fill:{color}}}")
+                            previous = mark
+                        cursor += 1
+                    mark = percent(visit)
+                    if mark > previous:
+                        frames.append(f"{mark:.2f}%{{fill:{color}}}")
+                        previous = mark
+                    off_mark = min(99.9, mark + 0.05)
+                    if off_mark > previous:
+                        frames.append(f"{off_mark:.2f}%{{fill:var(--ce)}}")
+                        previous = off_mark
+                frames.append("100%{fill:var(--ce)}")
                 name = f"e{eaten_index}"
                 eaten_index += 1
-                rules.append(
-                    f"@keyframes {name}{{{mark:.2f}%{{fill:{color}}}{mark + 0.08:.2f}%,100%{{fill:var(--ce)}}}}"
-                )
+                rules.append(f"@keyframes {name}{{{''.join(frames)}}}")
                 rules.append(f".c.{name}{{fill:{color};animation-name:{name}}}")
                 klass = f"c {name}"
-                eaten.append((column, row))
-            rects.append(
-                f'<rect class="{klass}" x="{column * 16 + 2}" y="{row * 16 + 2}" rx="2" ry="2"/>'
-            )
+            rects.append(f'<rect class="{klass}" x="{column * 16 + 2}" y="{row * 16 + 2}" rx="2" ry="2"/>')
 
-    for segment in range(segments):
-        keys = []
-        previous = None
-        for frame_index, frame in enumerate(frames):
-            column, row = at(frame, segment)
-            if (column, row) == previous and frame_index not in (0, last):
-                continue
-            previous = (column, row)
-            keys.append(f"{percent(frame_index):.2f}%{{transform:translate({column * 16}px,{row * 16}px)}}")
-        rules.append(f"@keyframes s{segment}{{{''.join(keys)}}}")
-        column, row = at(frames[0], segment)
-        size = 13.2 - segment * 1.5
+    for segment in range(longest):
+        delay = 0 if segment == 0 else -(duration - segment * step)
+        size = max(8.0, 14.0 - segment * 0.28)
         inset = (16 - size) / 2
+        opacity = 1
+        appear = "show"
+        if segment >= base:
+            opacity = 0
+            frames = ["0%{opacity:0}"]
+            previous = 0.0
+            need = segment - base
+            for group_index, group in enumerate(eats):
+                if len(group) <= need:
+                    continue
+                show = percent(group[need])
+                hide = 100.0
+                later = [hide_at for hide_at in hides if hide_at > group[need]]
+                if later:
+                    hide = percent(later[0])
+                elif group_index + 1 < len(eats):
+                    hide = percent(eats[group_index + 1][0])
+                if show <= previous:
+                    show = previous + 0.02
+                if hide > show:
+                    frames.append(f"{show:.2f}%{{opacity:1}}")
+                    frames.append(f"{min(99.9, hide):.2f}%{{opacity:0}}")
+                    previous = hide
+            frames.append("100%{opacity:0}")
+            appear = f"a{segment}"
+            rules.append(f"@keyframes {appear}{{{''.join(frames)}}}")
+        column, row, color = route[(period - segment) % period]
         rules.append(
-            f".s.s{segment}{{animation-name:s{segment};transform:translate({column * 16}px,{row * 16}px)}}"
+            f".s.t{segment}{{animation-name:trail,{appear};animation-delay:{delay:.2f}ms,0ms;"
+            f"opacity:{opacity};fill:{color};transform:translate({column * 16}px,{row * 16}px)}}"
         )
         rects.append(
-            f'<rect class="s s{segment}" x="{inset:.1f}" y="{inset:.1f}" width="{size:.1f}" height="{size:.1f}" rx="4" ry="4"/>'
+            f'<rect class="s t{segment}" x="{inset:.1f}" y="{inset:.1f}" width="{size:.1f}" height="{size:.1f}" rx="4" ry="4"/>'
         )
 
-    width = len(weeks) * 16
-    rects.append(f'<rect class="u" x="2" y="128" width="{width - 6}" height="10" rx="5"/>')
-    style = "".join(rules)
+    rects.append(f'<rect class="u" x="2" y="128" width="{width * 16 - 6}" height="10" rx="5"/>')
     return (
-        f'<svg viewBox="-8 -24 {width + 20} 176" width="{width + 20}" height="176" xmlns="http://www.w3.org/2000/svg">'
-        f"<style>{style}</style>{''.join(rects)}</svg>"
+        f'<svg viewBox="-8 -24 {width * 16 + 20} 176" width="{width * 16 + 20}" height="176" xmlns="http://www.w3.org/2000/svg">'
+        f"<style>{''.join(rules)}</style>{''.join(rects)}</svg>"
     )
 
 
