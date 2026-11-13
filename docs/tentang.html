@@ -5,39 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tentang — Andra Aulia Rizaldy</title>
   <meta name="description" content="Riwayat Andra Aulia Rizaldy, senior fullstack developer di RSU Mitra Paramedika, Yogyakarta." />
-  <meta name="theme-color" content="#e6e6e6" />
+  <meta name="theme-color" content="#05050a" />
   <link rel="canonical" href="https://andrarizal.github.io/AndraRizal/tentang.html" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div id="progress"></div>
+  <div class="cursor" id="cursor"></div>
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="spot" aria-hidden="true"></div>
   <a class="skip" href="#isi">Langsung ke isi</a>
-  <header class="bar">
-    <a class="brand" href="index.html">Andra</a>
-    <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Buka menu">
-      <i></i><i></i>
-    </button>
-  </header>
-  <nav class="menu" id="menu" inert>
-    <p class="menu-title">Menu</p>
-    <a href="index.html">Beranda</a>
-    <a href="tentang.html">Tentang</a>
-    <a href="karya.html">Karya</a>
-    <a href="index.html#gambar">Gambar</a>
-    <a href="index.html#kontak">Kontak</a>
+  <nav class="dock" id="nav" aria-label="Utama">
+    <a href="index.html#home">Beranda</a>
+    <a href="tentang.html" aria-current="page">Tentang</a>
+    <a href="index.html#projects">Proyek</a>
+    <a href="index.html#experience">Pengalaman</a>
+    <a href="index.html#contact">Kontak</a>
+    <a href="https://andrarizal.github.io/AndraRizal/">Situs</a>
   </nav>
 
   <main class="page" id="isi">
     <p class="eyebrow">Tentang</p>
-    <h1>Andra Aulia Rizaldy</h1>
-    <p class="intro">
-      Saya Andra Aulia Rizaldy, S.Kom. Senior fullstack developer di Yogyakarta,
-      lulusan Software Engineering Institut Teknologi Telkom Purwokerto, cum laude.
+    <h1 class="rv">Andra Aulia Rizaldy</h1>
+    <p class="intro rv">
+      Saya Andra Aulia Rizaldy, S.Kom., senior fullstack developer di Yogyakarta.
+      Lulusan Software Engineering, Institut Teknologi Telkom Purwokerto, cum laude.
       Di RSU Mitra Paramedika saya memimpin sistem informasi rumah sakit,
-      dari Laravel dan Next.js sampai integrasi Satu Sehat dan BPJS.
+      dari Laravel dan Next.js sampai sambungan ke Satu Sehat dan BPJS.
       Keep Learning, Keep Moving.
     </p>
 
@@ -50,193 +49,120 @@
       <button type="button" data-filter="devops">DevOps</button>
     </div>
     <div class="skill-grid">
-      <article data-group="backend">
+      <article class="card rv" data-group="backend">
         <h2>Backend</h2>
-        <ul class="tags">
-          <li>Node.js</li>
-          <li>Express.js</li>
-          <li>NestJS</li>
-          <li>TypeScript</li>
-          <li>PHP</li>
-          <li>Laravel</li>
-          <li>Golang</li>
-          <li>Java</li>
-          <li>REST API</li>
-        </ul>
+        <ul class="tags"><li data-i="node">Node.js</li><li data-i="express">Express.js</li><li data-i="nest">NestJS</li><li data-i="ts">TypeScript</li><li data-i="php">PHP</li><li data-i="laravel">Laravel</li><li data-i="go">Golang</li><li data-i="java">Java</li><li>REST API</li></ul>
       </article>
-      <article data-group="frontend">
+      <article class="card rv" data-group="frontend" style="--d:.08s">
         <h2>Frontend</h2>
-        <ul class="tags">
-          <li>Next.js</li>
-          <li>React.js</li>
-          <li>Vue.js</li>
-          <li>JavaScript</li>
-        </ul>
+        <ul class="tags"><li data-i="next">Next.js</li><li data-i="react">React.js</li><li data-i="vue">Vue.js</li><li data-i="js">JavaScript</li><li data-i="html">HTML</li><li data-i="css">CSS</li></ul>
       </article>
-      <article data-group="data">
+      <article class="card rv" data-group="data">
         <h2>Data</h2>
-        <ul class="tags">
-          <li>PostgreSQL</li>
-          <li>MySQL</li>
-          <li>SQL Server</li>
-          <li>Redis</li>
-          <li>Firebase</li>
-          <li>MongoDB</li>
-        </ul>
+        <ul class="tags"><li data-i="pg">PostgreSQL</li><li data-i="mysql">MySQL</li><li data-i="mssql">SQL Server</li><li data-i="redis">Redis</li><li data-i="firebase">Firebase</li><li data-i="mongo">MongoDB</li></ul>
       </article>
-      <article data-group="devops">
+      <article class="card rv" data-group="devops" style="--d:.08s">
         <h2>DevOps</h2>
-        <ul class="tags">
-          <li>Docker</li>
-          <li>Kubernetes</li>
-          <li>GitLab CI/CD</li>
-          <li>AWS EC2</li>
-          <li>Kafka</li>
-          <li>RabbitMQ</li>
-          <li>n8n</li>
-        </ul>
+        <ul class="tags"><li data-i="docker">Docker</li><li data-i="k8s">Kubernetes</li><li data-i="gitlab">GitLab CI/CD</li><li data-i="git">Git</li><li data-i="github">GitHub</li><li data-i="aws">AWS EC2</li><li data-i="kafka">Kafka</li><li data-i="rabbit">RabbitMQ</li><li data-i="n8n">n8n</li></ul>
       </article>
     </div>
 
     <h2 class="block-title">Pengalaman</h2>
-    <ol class="timeline">
-      <li>
-        <div class="when">Jun 2023<br />Sekarang</div>
-        <div>
-          <h3>Koordinator Data &amp; Informasi</h3>
-          <p class="where">RSU Mitra Paramedika · Yogyakarta</p>
-          <p>
-            Memimpin pemrograman, analisis data, UI/UX, dan jaringan.
-            SIMRS dengan PHP/Laravel dan Next.js/React di atas MySQL.
-            HRIS dan inventaris dengan Node.js (Express, NestJS/TypeScript), PostgreSQL, Redis, dan Firebase.
-            Microservice Golang untuk notifikasi, Satu Sehat, dan kepegawaian.
-            Integrasi Kemenkes, Satu Sehat, BPJS, dan n8n.
-            Deploy lewat GitLab CI/CD, Docker, Kubernetes, serta AWS EC2.
-          </p>
-          <ul class="tags">
-            <li>Laravel</li>
-            <li>Next.js</li>
-            <li>NestJS</li>
-            <li>Golang</li>
-            <li>PostgreSQL</li>
-            <li>Docker</li>
-            <li>Kubernetes</li>
-            <li>Satu Sehat</li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <div class="when">Lepas</div>
-        <div>
-          <h3>Backend, proyek terpilih</h3>
-          <p class="where">Mandiri</p>
-          <p>Sistem perpustakaan dan kasir dengan Golang. Sistem klinik dengan Java.</p>
-          <ul class="tags"><li>Golang</li><li>Java</li></ul>
-        </div>
-      </li>
-      <li>
-        <div class="when">Feb 2022<br />Jul 2022</div>
-        <div>
-          <h3>Fullstack Web Developer</h3>
-          <p class="where">PT Lentera Bangsa Benderang (BINAR) · Magang</p>
-          <p>Magang bersertifikat. Merancang dan mengintegrasikan fitur lewat REST API bersama desainer dan pengembang lain.</p>
-          <ul class="tags"><li>REST API</li></ul>
-        </div>
-      </li>
-      <li>
-        <div class="when">Mar 2022<br />Jul 2022</div>
-        <div>
-          <h3>Backend Laravel</h3>
-          <p class="where">Bisa Tani · Magang</p>
-          <p>Backend platform agri-commerce bersama tim lintas fungsi, termasuk data science dan growth.</p>
-          <ul class="tags"><li>Laravel</li></ul>
-        </div>
-      </li>
-      <li>
-        <div class="when">Des 2021<br />Feb 2022</div>
-        <div>
-          <h3>Asisten lab pemrograman web</h3>
-          <p class="where">Institut Teknologi Telkom Purwokerto</p>
-          <p>Sesi latihan pemrograman web, termasuk live coding lewat Zoom.</p>
-        </div>
-      </li>
-      <li>
-        <div class="when">Agu 2020<br />Feb 2021</div>
-        <div>
-          <h3>Fullstack Developer</h3>
-          <p class="where">Bahira Studio · Purwokerto</p>
-          <p>Backend pemesanan dengan Node.js, Redis, dan Firebase. Aplikasi Laravel, React, dan Vue.js untuk klien SMA di Kabupaten Banyumas, plus perawatan server.</p>
-          <ul class="tags"><li>Node.js</li><li>Laravel</li><li>React</li><li>Vue.js</li></ul>
-        </div>
-      </li>
-      <li>
-        <div class="when">Mei 2020<br />Feb 2021</div>
-        <div>
-          <h3>Mobile &amp; Webmaster</h3>
-          <p class="where">Bikermart Indonesia · Purwokerto</p>
-          <p>Sistem omnichannel yang menyelaraskan produk di Shopee, Lazada, dan situs resmi, termasuk kalkulator ongkir Raja Ongkir.</p>
-          <ul class="tags"><li>Shopee</li><li>Lazada</li><li>Raja Ongkir</li></ul>
-        </div>
-      </li>
-      <li>
-        <div class="when">Nov 2019<br />Jan 2021</div>
-        <div>
-          <h3>Fullstack Developer</h3>
-          <p class="where">Sari Glass Warehouse · Purwokerto</p>
-          <p>Aplikasi web manajemen stok gudang.</p>
-        </div>
-      </li>
-      <li>
-        <div class="when">Sep 2018<br />Nov 2018</div>
-        <div>
-          <h3>Web Developer</h3>
-          <p class="where">Technopark SMA Negeri 1 Majenang</p>
-          <p>Startup sekolah bersama teman dan guru pembimbing, termasuk server IoT dengan Laravel.</p>
-          <ul class="tags"><li>Laravel</li><li>IoT</li></ul>
-        </div>
-      </li>
-    </ol>
+    <div class="timeline" id="timeline">
+      <div class="beam-line" id="beam"></div>
+      <article class="card item rv">
+        <div class="date">Jun 2023 — Sekarang</div>
+        <h3>Koordinator Data &amp; Informasi</h3>
+        <p class="where">RSU Mitra Paramedika · Yogyakarta</p>
+        <p>Saya memimpin pemrograman, analisis data, UI/UX, dan jaringan. SIMRS dibuat dengan PHP/Laravel dan Next.js/React, datanya di MySQL. HRIS dan inventaris memakai Node.js (Express, NestJS, TypeScript), PostgreSQL, Redis, dan Firebase. Layanan Golang terpisah mengurus notifikasi, Satu Sehat, dan kepegawaian. Sistem ini terhubung ke Kemenkes, Satu Sehat, BPJS, dan n8n. Deploy ke server lewat GitLab CI/CD, Docker, Kubernetes, dan AWS EC2.</p>
+        <ul class="tags"><li data-i="laravel">Laravel</li><li data-i="next">Next.js</li><li data-i="nest">NestJS</li><li data-i="ts">TypeScript</li><li data-i="js">JavaScript</li><li data-i="go">Golang</li><li data-i="pg">PostgreSQL</li><li data-i="mysql">MySQL</li><li data-i="redis">Redis</li><li data-i="firebase">Firebase</li><li data-i="docker">Docker</li><li data-i="k8s">Kubernetes</li><li data-i="kafka">Kafka</li><li data-i="n8n">n8n</li><li>Satu Sehat</li></ul>
+      </article>
+      <article class="card item rv">
+        <div class="date">Lepas</div>
+        <h3>Backend, proyek lepas</h3>
+        <p class="where">Pekerjaan sendiri</p>
+        <p>Perpustakaan dan kasir dibuat dengan Golang. Sistem klinik dibuat dengan Java.</p>
+        <ul class="tags"><li>Golang</li><li>Java</li></ul>
+      </article>
+      <article class="card item rv">
+        <div class="date">Feb 2022 — Jul 2022</div>
+        <h3>Fullstack Web Developer</h3>
+        <p class="where">PT Lentera Bangsa Benderang (BINAR) · Magang</p>
+        <p>Magang bersertifikat. Saya merancang fitur dan menyambungkannya lewat REST API, bersama desainer dan pengembang lain.</p>
+        <ul class="tags"><li>REST API</li></ul>
+      </article>
+      <article class="card item rv">
+        <div class="date">Mar 2022 — Jul 2022</div>
+        <h3>Backend Laravel</h3>
+        <p class="where">Bisa Tani · Magang</p>
+        <p>Backend untuk platform jual beli hasil tani. Saya bekerja dengan tim dari bidang lain, termasuk data science dan growth.</p>
+        <ul class="tags"><li>Laravel</li></ul>
+      </article>
+      <article class="card item rv">
+        <div class="date">Des 2021 — Feb 2022</div>
+        <h3>Asisten lab pemrograman web</h3>
+        <p class="where">Institut Teknologi Telkom Purwokerto</p>
+        <p>Latihan pemrograman web, termasuk live coding lewat Zoom.</p>
+      </article>
+      <article class="card item rv">
+        <div class="date">Agu 2020 — Feb 2021</div>
+        <h3>Fullstack Developer</h3>
+        <p class="where">Bahira Studio · Purwokerto</p>
+        <p>Backend pemesanan dengan Node.js, Redis, dan Firebase. Aplikasi Laravel, React, dan Vue.js untuk SMA di Kabupaten Banyumas, serta perawatan server.</p>
+        <ul class="tags"><li>Node.js</li><li>Laravel</li><li>React</li><li>Vue.js</li></ul>
+      </article>
+      <article class="card item rv">
+        <div class="date">Mei 2020 — Feb 2021</div>
+        <h3>Mobile &amp; Webmaster</h3>
+        <p class="where">Bikermart Indonesia · Purwokerto</p>
+        <p>Sistem yang menyamakan produk di Shopee, Lazada, dan situs resmi, termasuk kalkulator ongkir Raja Ongkir.</p>
+        <ul class="tags"><li data-i="shopee">Shopee</li><li>Lazada</li><li>Raja Ongkir</li></ul>
+      </article>
+      <article class="card item rv">
+        <div class="date">Nov 2019 — Jan 2021</div>
+        <h3>Fullstack Developer</h3>
+        <p class="where">Sari Glass Warehouse · Purwokerto</p>
+        <p>Aplikasi web untuk mengatur stok gudang.</p>
+      </article>
+      <article class="card item rv">
+        <div class="date">Sep 2018 — Nov 2018</div>
+        <h3>Web Developer</h3>
+        <p class="where">Technopark SMA Negeri 1 Majenang</p>
+        <p>Usaha rintisan di sekolah, bersama teman dan guru pembimbing. Termasuk server IoT dengan Laravel.</p>
+        <ul class="tags"><li>Laravel</li><li>IoT</li></ul>
+      </article>
+    </div>
 
     <h2 class="block-title">Pendidikan</h2>
-    <ul class="edu">
-      <li>
-        <div class="when">2019–2023</div>
-        <div>
-          <strong>Software Engineering</strong>
-          <span>Institut Teknologi Telkom Purwokerto · IPK 3.91 · cum laude</span>
-        </div>
-      </li>
-      <li>
-        <div class="when">2016–2018</div>
-        <div>
-          <strong>SMAN 1 Majenang</strong>
-          <span>Cilacap · nilai akhir 83</span>
-        </div>
-      </li>
-      <li>
-        <div class="when">Bahasa</div>
-        <div>
-          <strong>Indonesia &amp; Inggris</strong>
-          <span>Indonesia, penutur asli · Inggris, tingkat menengah</span>
-        </div>
-      </li>
-    </ul>
+    <div class="timeline">
+      <article class="card item rv">
+        <div class="date">2019 — 2023</div>
+        <h3>Software Engineering</h3>
+        <p>Institut Teknologi Telkom Purwokerto · IPK 3.91 · cum laude</p>
+      </article>
+      <article class="card item rv">
+        <div class="date">2016 — 2018</div>
+        <h3>SMAN 1 Majenang</h3>
+        <p>Cilacap · nilai akhir 83</p>
+      </article>
+      <article class="card item rv">
+        <div class="date">Bahasa</div>
+        <h3>Indonesia &amp; Inggris</h3>
+        <p>Indonesia, penutur asli · Inggris, tingkat menengah</p>
+      </article>
+    </div>
 
     <h2 class="block-title">Sertifikat</h2>
-    <ul class="certs">
-      <li><span>Keamanan siber, pemerintahan dan pendidikan</span><span>CyberHub</span></li>
-      <li><span>Pembaruan sistem Satu Sehat</span><span>Kemenkes</span></li>
-      <li><span>Pembaruan bridging BPJS</span><span>BPJS</span></li>
-      <li><span>Junior Web Developer</span><span>BNSP</span></li>
-      <li><span>Magang dan studi independen</span><span>Binar</span></li>
-      <li><span>Situs dengan WordPress</span><span>Coursera</span></li>
-    </ul>
-
-    <footer class="foot">
-      <p>© <span id="year">2026</span> Andra Aulia Rizaldy</p>
-      <p>Keep Learning, Keep Moving</p>
-    </footer>
+    <div class="projects">
+      <article class="card rv"><h3>Keamanan siber</h3><p>Pemerintahan dan pendidikan · CyberHub</p></article>
+      <article class="card rv"><h3>Satu Sehat</h3><p>Pembaruan sistem · Kemenkes</p></article>
+      <article class="card rv"><h3>BPJS</h3><p>Pembaruan koneksi ke BPJS</p></article>
+      <article class="card rv"><h3>Junior Web Developer</h3><p>BNSP</p></article>
+      <article class="card rv"><h3>Magang dan studi independen</h3><p>Binar</p></article>
+      <article class="card rv"><h3>Situs dengan WordPress</h3><p>Coursera</p></article>
+    </div>
   </main>
+  <footer class="site-foot">© <span id="year">2026</span> Andra Aulia Rizaldy · <a href="https://andrarizal.github.io/AndraRizal/">andrarizal.github.io/AndraRizal</a></footer>
   <script src="script.js"></script>
 </body>
 </html>

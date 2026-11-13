@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="id" class="home-snap">
+<html lang="id">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Andra Aulia Rizaldy — Senior Fullstack Developer</title>
   <meta name="description" content="Andra Aulia Rizaldy, S.Kom., senior fullstack developer di Yogyakarta. Koordinator Data dan Informasi di RSU Mitra Paramedika." />
-  <meta name="theme-color" content="#e6e6e6" />
+  <meta name="theme-color" content="#05050a" />
   <link rel="canonical" href="https://andrarizal.github.io/AndraRizal/" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <meta property="og:title" content="Andra Aulia Rizaldy — Senior Fullstack Developer" />
@@ -16,7 +16,7 @@
   <meta property="og:locale" content="id_ID" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script type="application/ld+json">
   {
@@ -38,156 +38,217 @@
   }
   </script>
 </head>
-<body class="home">
-  <a class="skip" href="#awal">Langsung ke isi</a>
-  <header class="bar">
-    <a class="brand" href="#awal">Andra</a>
-    <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Buka menu">
-      <i></i><i></i>
-    </button>
+<body data-roles="Senior Fullstack Developer|Koordinator Data &amp; Informasi|Laravel, Next.js, Golang">
+  <div id="progress"></div>
+  <div class="cursor" id="cursor"></div>
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="spot" aria-hidden="true"></div>
+  <a class="skip" href="#home">Langsung ke isi</a>
+
+  <nav class="dock" id="nav" aria-label="Utama">
+    <a href="#home" class="on">Beranda</a>
+    <a href="#about">Tentang</a>
+    <a href="#projects">Proyek</a>
+    <a href="#experience">Pengalaman</a>
+    <a href="#contact">Kontak</a>
+    <a href="https://andrarizal.github.io/AndraRizal/">Situs</a>
+  </nav>
+
+  <header class="hero" id="home">
+    <canvas id="stars"></canvas>
+    <div class="badge rv"><b></b>Terbuka untuk kerja sama</div>
+    <h1 class="display" id="title">
+      <span class="w" style="animation-delay:.15s">Saya</span>
+      <span class="w" style="animation-delay:.24s">membangun</span>
+      <span class="w" style="animation-delay:.33s">sistem</span>
+      <span class="w" style="animation-delay:.42s">yang</span>
+      <span class="w" style="animation-delay:.51s">dipakai</span>
+      <span class="w grad" style="animation-delay:.6s">setiap</span>
+      <span class="w grad" style="animation-delay:.69s">hari</span>
+    </h1>
+    <p class="role"><span id="role">Senior Fullstack Developer</span><span class="caret" aria-hidden="true"></span></p>
+    <div class="cta rv" style="--d:.5s">
+      <a class="btn shimmer" href="#projects">Lihat proyek</a>
+      <a class="btn beam" href="#contact">Hubungi saya</a>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"></div>
   </header>
-  <nav class="menu" id="menu" inert>
-    <p class="menu-title">Menu</p>
-    <a href="#awal">Beranda</a>
-    <a href="tentang.html">Tentang</a>
-    <a href="karya.html">Karya</a>
-    <a href="#gambar">Gambar</a>
-    <a href="#kontak">Kontak</a>
-  </nav>
 
-  <main>
-    <section class="panel" id="awal">
-      <div class="split">
-        <div>
-          <p class="kicker">Andra Aulia</p>
-          <h1 class="display">Senior Fullstack Developer</h1>
-          <p class="lead">
-            Koordinator Data &amp; Informasi di RSU Mitra Paramedika, Yogyakarta.
-            Saya merancang SIMRS, HRIS, dan integrasi Satu Sehat serta BPJS, dari arsitektur sampai server produksi.
-          </p>
-          <div class="actions">
-            <a class="btn" href="tentang.html">Riwayat</a>
-            <a class="btn fill" href="#kontak">Hubungi</a>
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span class="chip" data-i="node" data-m="Nd">Node.js</span><span class="chip" data-i="express" data-m="Ex">Express.js</span><span class="chip" data-i="nest" data-m="Ne">NestJS</span><span class="chip" data-i="ts" data-m="TS">TypeScript</span><span class="chip" data-i="js" data-m="JS">JavaScript</span><span class="chip" data-i="php" data-m="Ph">PHP</span><span class="chip" data-i="laravel" data-m="La">Laravel</span><span class="chip" data-i="go" data-m="Go">Golang</span><span class="chip" data-i="java" data-m="Jv">Java</span><span class="chip" data-i="next" data-m="Nx">Next.js</span><span class="chip" data-i="react" data-m="Re">React.js</span><span class="chip" data-i="vue" data-m="Vu">Vue.js</span><span class="chip" data-i="html" data-m="Ht">HTML</span><span class="chip" data-i="css" data-m="Cs">CSS</span><span class="chip" data-i="pg" data-m="Pg">PostgreSQL</span><span class="chip" data-i="mysql" data-m="My">MySQL</span><span class="chip" data-i="mssql" data-m="Sq">SQL Server</span><span class="chip" data-i="redis" data-m="Rd">Redis</span><span class="chip" data-i="firebase" data-m="Fb">Firebase</span><span class="chip" data-i="mongo" data-m="Mg">MongoDB</span><span class="chip" data-i="docker" data-m="Dk">Docker</span><span class="chip" data-i="k8s" data-m="K8">Kubernetes</span><span class="chip" data-i="gitlab" data-m="Gl">GitLab CI/CD</span><span class="chip" data-i="git" data-m="Gt">Git</span><span class="chip" data-i="github" data-m="Gh">GitHub</span><span class="chip" data-i="aws" data-m="Aw">AWS EC2</span><span class="chip" data-i="kafka" data-m="Kf">Kafka</span><span class="chip" data-i="rabbit" data-m="Rb">RabbitMQ</span><span class="chip" data-i="n8n" data-m="n8">n8n</span><span class="chip" data-i="shopee" data-m="Sh">Shopee</span><span class="chip" data-i="sehat" data-m="SS">Satu Sehat</span><span class="chip" data-i="bpjs" data-m="BP">BPJS</span>
+      <span class="chip" data-i="node" data-m="Nd">Node.js</span><span class="chip" data-i="express" data-m="Ex">Express.js</span><span class="chip" data-i="nest" data-m="Ne">NestJS</span><span class="chip" data-i="ts" data-m="TS">TypeScript</span><span class="chip" data-i="js" data-m="JS">JavaScript</span><span class="chip" data-i="php" data-m="Ph">PHP</span><span class="chip" data-i="laravel" data-m="La">Laravel</span><span class="chip" data-i="go" data-m="Go">Golang</span><span class="chip" data-i="java" data-m="Jv">Java</span><span class="chip" data-i="next" data-m="Nx">Next.js</span><span class="chip" data-i="react" data-m="Re">React.js</span><span class="chip" data-i="vue" data-m="Vu">Vue.js</span><span class="chip" data-i="html" data-m="Ht">HTML</span><span class="chip" data-i="css" data-m="Cs">CSS</span><span class="chip" data-i="pg" data-m="Pg">PostgreSQL</span><span class="chip" data-i="mysql" data-m="My">MySQL</span><span class="chip" data-i="mssql" data-m="Sq">SQL Server</span><span class="chip" data-i="redis" data-m="Rd">Redis</span><span class="chip" data-i="firebase" data-m="Fb">Firebase</span><span class="chip" data-i="mongo" data-m="Mg">MongoDB</span><span class="chip" data-i="docker" data-m="Dk">Docker</span><span class="chip" data-i="k8s" data-m="K8">Kubernetes</span><span class="chip" data-i="gitlab" data-m="Gl">GitLab CI/CD</span><span class="chip" data-i="git" data-m="Gt">Git</span><span class="chip" data-i="github" data-m="Gh">GitHub</span><span class="chip" data-i="aws" data-m="Aw">AWS EC2</span><span class="chip" data-i="kafka" data-m="Kf">Kafka</span><span class="chip" data-i="rabbit" data-m="Rb">RabbitMQ</span><span class="chip" data-i="n8n" data-m="n8">n8n</span><span class="chip" data-i="shopee" data-m="Sh">Shopee</span><span class="chip" data-i="sehat" data-m="SS">Satu Sehat</span><span class="chip" data-i="bpjs" data-m="BP">BPJS</span>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="eyebrow rv">Tentang</div>
+    <h2 class="rv">Sedikit <span class="grad">tentang saya</span></h2>
+    <p class="sub rv">Andra Aulia Rizaldy, S.Kom. Senior fullstack developer di Yogyakarta. Lulusan Software Engineering, Institut Teknologi Telkom Purwokerto, IPK 3.91, cum laude.</p>
+    <div class="bento">
+      <article class="card b1 rv">
+        <div class="who">
+          <img src="https://avatars.githubusercontent.com/u/72431050?v=4" alt="Foto Andra Aulia Rizaldy" width="104" height="104" decoding="async" />
+          <div>
+            <p class="eyebrow">Halo, saya Andra</p>
+            <h3>Senior Fullstack Developer</h3>
+            <p>Di RSU Mitra Paramedika saya memimpin SIMRS dan HRIS, lalu menghubungkannya ke Satu Sehat dan BPJS. Keep Learning, Keep Moving.</p>
           </div>
         </div>
-        <figure class="shot">
-          <img
-            src="https://avatars.githubusercontent.com/u/72431050?v=4"
-            alt="Foto Andra Aulia Rizaldy"
-            width="640"
-            height="640"
-          />
-        </figure>
+        <div class="skills">
+          <span data-i="laravel">Laravel</span><span data-i="next">Next.js</span><span data-i="nest">NestJS</span><span data-i="ts">TypeScript</span><span data-i="js">JavaScript</span><span data-i="html">HTML</span><span data-i="css">CSS</span><span data-i="git">Git</span><span data-i="github">GitHub</span><span data-i="go">Golang</span><span data-i="pg">PostgreSQL</span><span data-i="mysql">MySQL</span><span data-i="redis">Redis</span><span data-i="firebase">Firebase</span><span data-i="docker">Docker</span><span data-i="k8s">Kubernetes</span><span data-i="kafka">Kafka</span><span data-i="n8n">n8n</span><span>Satu Sehat</span>
+        </div>
+      </article>
+      <article class="card b2 rv" style="--d:.1s">
+        <p>IPK</p>
+        <div class="big grad">3.91</div>
+      </article>
+      <article class="card b3 rv" style="--d:.2s">
+        <p>Mulai berkarya</p>
+        <div class="big grad"><span data-count="2018">2018</span></div>
+      </article>
+      <article class="card b4 rv">
+        <h3>Yogyakarta</h3>
+        <p>Koordinator Data &amp; Informasi, RSU Mitra Paramedika.</p>
+        <div class="orbit" aria-hidden="true"><i></i><i></i><i></i></div>
+      </article>
+      <article class="card b5 rv" style="--d:.1s">
+        <h3>Keep Learning, Keep Moving</h3>
+        <p>Belajar tidak selesai. Yang sudah jalan tetap saya bawa ke sistem berikutnya, dari rancangan sampai server.</p>
+        <p class="more"><a class="go" href="tentang.html">Riwayat lengkap <i>→</i></a></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="eyebrow rv">Karya</div>
+    <h2 class="rv">Proyek <span class="grad">yang bisa dibuka</span></h2>
+    <p class="sub rv">SIMRS rumah sakit tidak saya publikasikan. Gambar di bawah bisa diganti, kartu di bawahnya mengarah ke GitHub.</p>
+    <div class="stage"><iframe id="figure" title="Rekam medis berjalan" src="rekam-medis-light.html" loading="lazy"></iframe></div>
+    <div class="picks" role="group" aria-label="Pilih gambar">
+      <button type="button" class="is-on" aria-current="true" data-href="rekam-medis-light.html" data-line="Satu berkas pasien lewat tujuh stasiun. Stempel turun di rawat jalan.">Rekam medis</button>
+      <button type="button" data-href="gambar-simpeg.html" data-line="Ada empat laci. Laci yang dipilih maju, kartu pegawai ada di laci identitas.">SIMPEG</button>
+      <button type="button" data-href="gambar-alkes.html" data-line="Kotak alat naik di tiang, dari diterima sampai keluar.">Inventaris Alkes</button>
+      <button type="button" data-href="gambar-tobacco.html" data-line="Sebuah timbangan. Kaleng di sisi kiri, beban di sisi kanan.">Tobacco Shop</button>
+      <button type="button" data-href="gambar-tokoku.html" data-line="Laci kas terbuka, lalu palu bel turun.">Tokoku</button>
+      <button type="button" data-href="gambar-tiket.html" data-line="Pelubang turun ke tiket, lalu palang naik.">Tiket Wisata</button>
+      <button type="button" data-href="gambar-sekolah.html" data-line="Buku terbuka, lalu pemukul mengenai bel.">SDN 1 Tegalpingen</button>
+    </div>
+    <p class="pick-line" id="pick-line">Satu berkas pasien lewat tujuh stasiun. Stempel turun di rawat jalan.</p>
+    <div class="projects">
+      <a class="card tilt rv" style="--c1:#7c5cff;--c2:#22d3ee" href="rekam-medis.html">
+        <div class="thumb"><span class="lane" aria-hidden="true"><i class="ico ico-file"></i></span></div>
+        <h3>Rekam medis berjalan</h3>
+        <p>Satu berkas melewati tujuh stasiun.</p>
+        <div class="tags"><span>Gambar</span></div>
+        <span class="go">Buka gambar <i>→</i></span>
+      </a>
+      <a class="card tilt rv" style="--d:.08s;--c1:#f472b6;--c2:#7c5cff" href="https://github.com/Andrarizal/simpeg" target="_blank" rel="noopener noreferrer">
+        <div class="thumb"><span class="lane" aria-hidden="true"><i class="ico ico-id"></i></span></div>
+        <h3>SIMPEG</h3>
+        <p>Sistem informasi kepegawaian.</p>
+        <div class="tags"><span data-i="php">PHP</span></div>
+        <span class="go">Buka GitHub <i>→</i></span>
+      </a>
+      <a class="card tilt rv" style="--d:.16s;--c1:#22d3ee;--c2:#34d399" href="https://github.com/Andrarizal/inventory-alkes-rs" target="_blank" rel="noopener noreferrer">
+        <div class="thumb"><span class="lane" aria-hidden="true"><i class="ico ico-box"></i></span></div>
+        <h3>Inventaris Alkes</h3>
+        <p>Pencatatan alat kesehatan rumah sakit.</p>
+        <div class="tags"><span>Inventaris</span></div>
+        <span class="go">Buka GitHub <i>→</i></span>
+      </a>
+      <a class="card tilt rv" style="--d:.24s;--c1:#fb923c;--c2:#f472b6" href="https://github.com/Andrarizal/tobacco-shop" target="_blank" rel="noopener noreferrer">
+        <div class="thumb"><span class="lane" aria-hidden="true"><i class="ico ico-scale"></i></span></div>
+        <h3>Tobacco Shop</h3>
+        <p>Toko tembakau.</p>
+        <div class="tags"><span data-i="js">JavaScript</span></div>
+        <span class="go">Buka GitHub <i>→</i></span>
+      </a>
+      <a class="card tilt rv" style="--d:.08s;--c1:#7c5cff;--c2:#f472b6" href="https://github.com/Andrarizal/tokoku" target="_blank" rel="noopener noreferrer">
+        <div class="thumb"><span class="lane" aria-hidden="true"><i class="ico ico-bag"></i></span></div>
+        <h3>Tokoku</h3>
+        <p>Halaman toko daring.</p>
+        <div class="tags"><span data-i="html">HTML</span></div>
+        <span class="go">Buka GitHub <i>→</i></span>
+      </a>
+      <a class="card tilt rv" style="--d:.16s;--c1:#22d3ee;--c2:#7c5cff" href="https://github.com/Andrarizal/Tiket-Wisata" target="_blank" rel="noopener noreferrer">
+        <div class="thumb"><span class="lane" aria-hidden="true"><i class="ico ico-ticket"></i></span></div>
+        <h3>Tiket Wisata</h3>
+        <p>Pemesanan tiket wisata.</p>
+        <div class="tags"><span data-i="php">PHP</span></div>
+        <span class="go">Buka GitHub <i>→</i></span>
+      </a>
+      <a class="card tilt rv" style="--d:.24s;--c1:#34d399;--c2:#22d3ee" href="https://github.com/Andrarizal/Website-SD-N-1-TegalPingen" target="_blank" rel="noopener noreferrer">
+        <div class="thumb"><span class="lane" aria-hidden="true"><i class="ico ico-bell"></i></span></div>
+        <h3>SDN 1 Tegalpingen</h3>
+        <p>Situs sekolah.</p>
+        <div class="tags"><span>Blade</span></div>
+        <span class="go">Buka GitHub <i>→</i></span>
+      </a>
+    </div>
+    <p class="more"><a class="go" href="karya.html">Daftar lengkap <i>→</i></a></p>
+  </section>
+
+  <section id="experience">
+    <div class="eyebrow rv">Perjalanan</div>
+    <h2 class="rv">Pengalaman <span class="grad">&amp; pendidikan</span></h2>
+    <p class="sub rv">Garis cahaya mengikuti guliran. Uraian lengkap ada di halaman riwayat.</p>
+    <div class="timeline" id="timeline">
+      <div class="beam-line" id="beam"></div>
+      <article class="card item rv">
+        <div class="date">Jun 2023 — Sekarang</div>
+        <h3>Koordinator Data &amp; Informasi</h3>
+        <p class="where">RSU Mitra Paramedika · Yogyakarta</p>
+        <p>SIMRS dengan Laravel dan Next.js, HRIS dengan NestJS, layanan Golang untuk Satu Sehat dan BPJS.</p>
+      </article>
+      <article class="card item rv">
+        <div class="date">Lepas</div>
+        <h3>Backend, proyek lepas</h3>
+        <p>Perpustakaan dan kasir dengan Golang. Sistem klinik dengan Java.</p>
+      </article>
+      <article class="card item rv">
+        <div class="date">2022</div>
+        <h3>BINAR dan Bisa Tani</h3>
+        <p>Magang fullstack di BINAR, lalu backend Laravel untuk jual beli hasil tani.</p>
+      </article>
+      <article class="card item rv">
+        <div class="date">2020 — 2021</div>
+        <h3>Bahira Studio, Bikermart, Sari Glass Warehouse</h3>
+        <p>Pemesanan, toko di beberapa kanal, dan stok gudang.</p>
+      </article>
+      <article class="card item rv">
+        <div class="date">2019 — 2023</div>
+        <h3>Software Engineering</h3>
+        <p>Institut Teknologi Telkom Purwokerto · IPK 3.91 · cum laude</p>
+      </article>
+      <article class="card item rv">
+        <div class="date">2018</div>
+        <h3>Technopark SMA Negeri 1 Majenang</h3>
+        <p>Usaha rintisan di sekolah, termasuk server IoT dengan Laravel.</p>
+      </article>
+    </div>
+    <p class="more"><a class="go" href="tentang.html">Riwayat lengkap <i>→</i></a></p>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="card rv">
+      <div class="eyebrow">Kontak</div>
+      <h2>Yuk <span class="grad">berkolaborasi</span></h2>
+      <p class="sub" style="margin-inline:auto;margin-bottom:0">Untuk kerja sama, proyek lepas, atau sapaan singkat.</p>
+      <div class="links">
+        <a class="btn shimmer" href="mailto:andrarizal2000@gmail.com">andrarizal2000@gmail.com</a>
+        <a class="btn beam" href="tel:+6287833254882">+62 878 3325 4882</a>
+        <a class="btn beam" href="https://andrarizal.github.io/AndraRizal/">GitHub Pages</a>
+        <a class="btn beam" href="https://github.com/Andrarizal" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="btn beam" href="https://www.linkedin.com/in/andra-aulia-rizaldy-939404232/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="btn beam" href="https://instagram.com/andrarizal787" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a class="btn beam" href="https://www.youtube.com/channel/UCnYAJAK2o31-_l3akpcC6tQ" target="_blank" rel="noopener noreferrer">YouTube</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="panel" id="tentang">
-      <div class="split media-first">
-        <div class="slab">
-          <strong>01</strong>
-          <p>Yogyakarta · S.Kom., cum laude</p>
-        </div>
-        <div>
-          <h2 class="display">Tentang saya</h2>
-          <p class="lead">
-            Fullstack developer di Yogyakarta, lulusan Software Engineering
-            Institut Teknologi Telkom Purwokerto. IPK 3.91.
-          </p>
-          <div class="actions">
-            <a class="btn fill" href="tentang.html">Selengkapnya</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel" id="karya">
-      <div class="split media-first">
-        <div class="slab">
-          <strong>02</strong>
-          <p>Enam repositori publik, plus gambar rekam medis.</p>
-        </div>
-        <div>
-          <h2 class="display">Karya</h2>
-          <p class="lead">
-            Yang bisa dibuka: SIMPEG, inventaris alkes, dan beberapa situs lama.
-            Pekerjaan SIMRS rumah sakit tidak dipublikasikan.
-          </p>
-          <div class="actions">
-            <a class="btn fill" href="karya.html">Selengkapnya</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel" id="gambar">
-      <div class="split figure-split">
-        <div class="stage">
-          <div class="figure-frame">
-            <iframe id="figure" src="rekam-medis-light.html" title="Rekam medis berjalan"></iframe>
-          </div>
-        </div>
-        <div>
-          <p class="kicker">Karya</p>
-          <ul class="pick">
-            <li><button type="button" class="is-on" aria-current="true" data-pick="gambar" data-href="rekam-medis-light.html" data-label="Buka gambar" data-line="Satu berkas berjalan lewat tujuh stasiun. Stempel turun di rawat jalan.">Rekam medis <span>Gambar</span></button></li>
-            <li><button type="button" data-pick="simpeg" data-href="gambar-simpeg.html" data-label="Buka gambar" data-line="Empat laci. Yang dipilih terdorong ke depan, kartu pegawai di laci identitas.">SIMPEG <span>Gambar</span></button></li>
-            <li><button type="button" data-pick="alkes" data-href="gambar-alkes.html" data-label="Buka gambar" data-line="Kotak alat naik di tiang, dari terima sampai keluar.">Inventaris Alkes <span>Gambar</span></button></li>
-            <li><button type="button" data-pick="tobacco" data-href="gambar-tobacco.html" data-label="Buka gambar" data-line="Timbangan. Kaleng di pan kiri, beban di pan kanan.">Tobacco Shop <span>Gambar</span></button></li>
-            <li><button type="button" data-pick="tokoku" data-href="gambar-tokoku.html" data-label="Buka gambar" data-line="Laci kas tertarik, lalu palu bel turun.">Tokoku <span>Gambar</span></button></li>
-            <li><button type="button" data-pick="tiket" data-href="gambar-tiket.html" data-label="Buka gambar" data-line="Pelubang turun ke tiket, lalu palang naik.">Tiket Wisata <span>Gambar</span></button></li>
-            <li><button type="button" data-pick="sd" data-href="gambar-sekolah.html" data-label="Buka gambar" data-line="Buku terbuka, lalu pemukul mengenai bel.">SDN 1 Tegalpingen <span>Gambar</span></button></li>
-          </ul>
-          <p class="lead" id="pick-line">Satu berkas berjalan lewat tujuh stasiun. Stempel turun di rawat jalan. Dua gelang naik di stasiun terakhir.</p>
-          <div class="actions">
-            <a class="btn fill" id="pick-link" href="rekam-medis-light.html">Buka gambar</a>
-          </div>
-          <p class="fine">Kursor mengikuti rel. Panah papan ketik memindahkan benda.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel" id="kontak">
-      <div class="split media-first">
-        <div class="slab">
-          <strong>03</strong>
-          <p>Keep Learning, Keep Moving</p>
-        </div>
-        <div>
-          <h2 class="display">Hubungi saya</h2>
-          <p class="lead">Untuk kolaborasi, pekerjaan lepas, atau sapaan singkat.</p>
-          <a class="mail" href="mailto:andrarizal2000@gmail.com">andrarizal2000@gmail.com</a>
-          <p class="phone"><a href="tel:+6287833254882">+62 878 3325 4882</a></p>
-          <div class="rounds">
-            <a href="mailto:andrarizal2000@gmail.com" aria-label="Kirim email">
-              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M4 7l8 6 8-6"/></svg>
-            </a>
-            <a href="https://github.com/Andrarizal" rel="me noopener noreferrer" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.1-1.47-1.1-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85 0 1.7.11 2.5.34 1.9-1.29 2.74-1.02 2.74-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.86v2.76c0 .26.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
-            </a>
-            <a href="https://www.linkedin.com/in/andra-aulia-rizaldy-939404232/" rel="me noopener noreferrer" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3.5 9h3v12h-3zM9.5 9h2.9v1.64h.04c.4-.76 1.4-1.56 2.88-1.56 3.08 0 3.65 2.03 3.65 4.66V21h-3v-5.6c0-1.34-.02-3.06-1.86-3.06-1.87 0-2.16 1.46-2.16 2.96V21h-3z"/></svg>
-            </a>
-            <a href="https://instagram.com/andrarizal787" rel="me noopener noreferrer" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.2" cy="6.8" r="0.8" fill="currentColor" stroke="none"/></svg>
-            </a>
-            <a href="https://www.youtube.com/channel/UCnYAJAK2o31-_l3akpcC6tQ" rel="me noopener noreferrer" aria-label="YouTube">
-              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M23 12.2s0-3.2-.4-4.6c-.2-.9-.9-1.6-1.8-1.8C19.2 5.4 12 5.4 12 5.4s-7.2 0-8.8.4c-.9.2-1.6.9-1.8 1.8C1 9 1 12.2 1 12.2s0 3.2.4 4.6c.2.9.9 1.6 1.8 1.8 1.6.4 8.8.4 8.8.4s7.2 0 8.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.4.4-4.6.4-4.6zM9.8 15.5v-6.6l6.2 3.3-6.2 3.3z"/></svg>
-            </a>
-          </div>
-          <p class="fine">© <span id="year">2026</span> Andra Aulia Rizaldy</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <nav class="dots" aria-label="Bagian halaman">
-    <a href="#awal" class="is-on" aria-label="Awal" aria-current="true"></a>
-    <a href="#tentang" aria-label="Tentang"></a>
-    <a href="#karya" aria-label="Karya"></a>
-    <a href="#gambar" aria-label="Gambar"></a>
-    <a href="#kontak" aria-label="Kontak"></a>
-  </nav>
-  <div class="hint" id="hint"><span>Gulir</span><i></i></div>
+  <footer class="site-foot">© <span id="year">2026</span> Andra Aulia Rizaldy · <a href="https://andrarizal.github.io/AndraRizal/">andrarizal.github.io/AndraRizal</a></footer>
   <script src="script.js"></script>
 </body>
 </html>

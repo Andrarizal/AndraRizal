@@ -4,125 +4,47 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Karya — Andra Aulia Rizaldy</title>
-  <meta name="description" content="Repositori publik Andra Aulia Rizaldy. Pekerjaan SIMRS rumah sakit tidak dipublikasikan." />
-  <meta name="theme-color" content="#e6e6e6" />
+  <meta name="description" content="Proyek publik Andra Aulia Rizaldy di GitHub. Pekerjaan SIMRS rumah sakit tidak dipublikasikan." />
+  <meta name="theme-color" content="#05050a" />
   <link rel="canonical" href="https://andrarizal.github.io/AndraRizal/karya.html" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div id="progress"></div>
+  <div class="cursor" id="cursor"></div>
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="spot" aria-hidden="true"></div>
   <a class="skip" href="#isi">Langsung ke isi</a>
-  <header class="bar">
-    <a class="brand" href="index.html">Andra</a>
-    <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Buka menu">
-      <i></i><i></i>
-    </button>
-  </header>
-  <nav class="menu" id="menu" inert>
-    <p class="menu-title">Menu</p>
-    <a href="index.html">Beranda</a>
+  <nav class="dock" id="nav" aria-label="Utama">
+    <a href="index.html#home">Beranda</a>
     <a href="tentang.html">Tentang</a>
-    <a href="karya.html">Karya</a>
-    <a href="index.html#gambar">Gambar</a>
-    <a href="index.html#kontak">Kontak</a>
+    <a href="karya.html" aria-current="page">Proyek</a>
+    <a href="index.html#experience">Pengalaman</a>
+    <a href="index.html#contact">Kontak</a>
+    <a href="https://andrarizal.github.io/AndraRizal/">Situs</a>
   </nav>
 
   <main class="page" id="isi">
     <p class="eyebrow">Karya</p>
-    <h1>Yang bisa dibuka</h1>
-    <p class="intro">
-      Repositori publik. Pekerjaan SIMRS rumah sakit tidak dipublikasikan di sini.
-    </p>
-    <ul class="archive">
-      <li>
-        <a href="rekam-medis.html">
-          <span class="kind">Gambar</span>
-          <span>
-            <strong>Rekam medis berjalan</strong>
-            <em>Tujuh stasiun, satu kereta berkas.</em>
-          </span>
-          <span class="go" aria-hidden="true">→</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/Andrarizal/simpeg" rel="noopener noreferrer">
-          <span class="kind">PHP</span>
-          <span>
-            <strong>SIMPEG</strong>
-            <em>Sistem informasi kepegawaian.</em>
-          </span>
-          <span class="go" aria-hidden="true">↗</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/Andrarizal/inventory-alkes-rs" rel="noopener noreferrer">
-          <span class="kind">Inventaris</span>
-          <span>
-            <strong>Inventaris Alkes</strong>
-            <em>Pencatatan alat kesehatan rumah sakit.</em>
-          </span>
-          <span class="go" aria-hidden="true">↗</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/Andrarizal/tobacco-shop" rel="noopener noreferrer">
-          <span class="kind">JavaScript</span>
-          <span>
-            <strong>Tobacco Shop</strong>
-            <em>Toko tembakau.</em>
-          </span>
-          <span class="go" aria-hidden="true">↗</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/Andrarizal/tokoku" rel="noopener noreferrer">
-          <span class="kind">HTML</span>
-          <span>
-            <strong>Tokoku</strong>
-            <em>Halaman toko daring.</em>
-          </span>
-          <span class="go" aria-hidden="true">↗</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/Andrarizal/Tiket-Wisata" rel="noopener noreferrer">
-          <span class="kind">PHP</span>
-          <span>
-            <strong>Tiket Wisata</strong>
-            <em>Pemesanan tiket wisata.</em>
-          </span>
-          <span class="go" aria-hidden="true">↗</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/Andrarizal/Website-SD-N-1-TegalPingen" rel="noopener noreferrer">
-          <span class="kind">Blade</span>
-          <span>
-            <strong>SDN 1 Tegalpingen</strong>
-            <em>Situs sekolah.</em>
-          </span>
-          <span class="go" aria-hidden="true">↗</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/Andrarizal?tab=repositories" rel="noopener noreferrer">
-          <span class="kind">GitHub</span>
-          <span>
-            <strong>Semua repositori</strong>
-            <em>Daftar lengkap di profil GitHub.</em>
-          </span>
-          <span class="go" aria-hidden="true">↗</span>
-        </a>
-      </li>
-    </ul>
-    <footer class="foot">
-      <p>© <span id="year">2026</span> Andra Aulia Rizaldy</p>
-      <p>Keep Learning, Keep Moving</p>
-    </footer>
+    <h1 class="rv">Yang bisa dibuka</h1>
+    <p class="intro rv">Proyek publik di GitHub. Pekerjaan SIMRS rumah sakit tidak saya publikasikan di sini.</p>
+    <div class="projects">
+      <a class="card tilt rv" style="--c1:#7c5cff;--c2:#22d3ee" href="rekam-medis.html"><div class="thumb"><span class="lane" aria-hidden="true"><i class="ico ico-file"></i></span></div><h3>Rekam medis berjalan</h3><p>Satu berkas melewati tujuh stasiun.</p><div class="tags"><span>Gambar</span></div><span class="go">Buka gambar <i>→</i></span></a>
+      <a class="card tilt rv" style="--d:.08s;--c1:#f472b6;--c2:#7c5cff" href="https://github.com/Andrarizal/simpeg" target="_blank" rel="noopener noreferrer"><div class="thumb"><span class="lane" aria-hidden="true"><i class="ico ico-id"></i></span></div><h3>SIMPEG</h3><p>Sistem informasi kepegawaian.</p><div class="tags"><span data-i="php">PHP</span></div><span class="go">Buka GitHub <i>→</i></span></a>
+      <a class="card tilt rv" style="--d:.16s;--c1:#22d3ee;--c2:#34d399" href="https://github.com/Andrarizal/inventory-alkes-rs" target="_blank" rel="noopener noreferrer"><div class="thumb"><span class="lane" aria-hidden="true"><i class="ico ico-box"></i></span></div><h3>Inventaris Alkes</h3><p>Pencatatan alat kesehatan rumah sakit.</p><div class="tags"><span>Inventaris</span></div><span class="go">Buka GitHub <i>→</i></span></a>
+      <a class="card tilt rv" style="--d:.08s;--c1:#fb923c;--c2:#f472b6" href="https://github.com/Andrarizal/tobacco-shop" target="_blank" rel="noopener noreferrer"><div class="thumb"><span class="lane" aria-hidden="true"><i class="ico ico-scale"></i></span></div><h3>Tobacco Shop</h3><p>Toko tembakau.</p><div class="tags"><span data-i="js">JavaScript</span></div><span class="go">Buka GitHub <i>→</i></span></a>
+      <a class="card tilt rv" style="--d:.16s;--c1:#7c5cff;--c2:#f472b6" href="https://github.com/Andrarizal/tokoku" target="_blank" rel="noopener noreferrer"><div class="thumb"><span class="lane" aria-hidden="true"><i class="ico ico-bag"></i></span></div><h3>Tokoku</h3><p>Halaman toko daring.</p><div class="tags"><span data-i="html">HTML</span></div><span class="go">Buka GitHub <i>→</i></span></a>
+      <a class="card tilt rv" style="--d:.24s;--c1:#22d3ee;--c2:#7c5cff" href="https://github.com/Andrarizal/Tiket-Wisata" target="_blank" rel="noopener noreferrer"><div class="thumb"><span class="lane" aria-hidden="true"><i class="ico ico-ticket"></i></span></div><h3>Tiket Wisata</h3><p>Pemesanan tiket wisata.</p><div class="tags"><span data-i="php">PHP</span></div><span class="go">Buka GitHub <i>→</i></span></a>
+      <a class="card tilt rv" style="--c1:#34d399;--c2:#22d3ee" href="https://github.com/Andrarizal/Website-SD-N-1-TegalPingen" target="_blank" rel="noopener noreferrer"><div class="thumb"><span class="lane" aria-hidden="true"><i class="ico ico-bell"></i></span></div><h3>SDN 1 Tegalpingen</h3><p>Situs sekolah.</p><div class="tags"><span>Blade</span></div><span class="go">Buka GitHub <i>→</i></span></a>
+      <a class="card tilt rv" style="--d:.08s;--c1:#ededf5;--c2:#7c5cff" href="https://github.com/Andrarizal?tab=repositories" target="_blank" rel="noopener noreferrer"><div class="thumb"><span class="lane" aria-hidden="true"><i class="ico ico-stack"></i></span></div><h3>Semua repositori</h3><p>Daftar lengkap ada di profil GitHub.</p><div class="tags"><span data-i="github">GitHub</span></div><span class="go">Buka profil <i>→</i></span></a>
+    </div>
   </main>
+  <footer class="site-foot">© <span id="year">2026</span> Andra Aulia Rizaldy · <a href="https://andrarizal.github.io/AndraRizal/">andrarizal.github.io/AndraRizal</a></footer>
   <script src="script.js"></script>
 </body>
 </html>
