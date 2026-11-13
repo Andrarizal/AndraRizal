@@ -34,7 +34,8 @@ const andra = {
   from: "Yogyakarta, Indonesia",
   stack: ["Node.js", "NestJS", "Laravel", "Golang", "Next.js", "PostgreSQL"],
   focus: ["SIMRS", "REST API", "DevOps"],
-  education: "Software Engineering, Institut Teknologi Telkom Purwokerto · IPK 3.91, cum laude",
+  education:
+    "Software Engineering, Institut Teknologi Telkom Purwokerto · IPK 3.91, cum laude",
   motto: "Keep Learning, Keep Moving",
   portfolio: "https://andrarizal.github.io/AndraRizal/",
 };
@@ -123,6 +124,6 @@ const andra = {
 
 <br/><br/>
 
-*Keep Learning, Keep Moving.*
+_Keep Learning, Keep Moving._
 
 </div>
