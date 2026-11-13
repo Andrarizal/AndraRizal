@@ -89,6 +89,16 @@ const andra = {
 
 <div align="center">
 
+**Achievements**
+
+<br/>
+
+<a href="https://github.com/Andrarizal?achievement=pull-shark&tab=achievements"><img src="https://github.githubassets.com/images/modules/profile/achievements/pull-shark-bronze.png" width="92" alt="Pull Shark x2" /></a>
+<a href="https://github.com/Andrarizal?achievement=pair-extraordinaire&tab=achievements"><img src="https://github.githubassets.com/images/modules/profile/achievements/pair-extraordinaire-default.png" width="92" alt="Pair Extraordinaire" /></a>
+<a href="https://github.com/Andrarizal?achievement=quickdraw&tab=achievements"><img src="https://github.githubassets.com/images/modules/profile/achievements/quickdraw-default.png" width="92" alt="Quickdraw" /></a>
+
+<br/><br/>
+
 <img src="./assets/summary.png" alt="18 repositori publik, 16 pengikut, sejak 2020. Bahasa terdeteksi: Java 3, PHP 2, JavaScript 2, HTML 2, CSS 1, Blade 1." width="92%" />
 
 <br/>
